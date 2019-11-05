@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "description": "Union mono-repo root package.json, used mainly to execute build scripts. This package is not published to npm.",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "license": "ISC",
+  "engines": {
+    "node": ">= 10"
+  },
+  "devDependencies": {
+    "case": "^1.6.2",
+    "glob": "^7.1.4"
+  },
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "execa": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
+    "listr": "^0.14.3",
+    "path": "^0.12.7",
+    "semver": "^6.3.0",
+    "turbocolor": "^2.6.1"
+  }
+}

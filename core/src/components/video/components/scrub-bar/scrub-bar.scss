@@ -1,0 +1,29 @@
+:host {
+    align-items: center;
+    display: flex;
+}
+
+span {
+    font-size: 12px;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+    margin: 0 8px;
+    height: 10px;
+    width: 100%;
+
+    &[value]::-webkit-progress-bar {
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+        overflow: hidden;
+    }
+
+    &[value]::-webkit-progress-value {
+        background: rgba(255, 255, 255, 0.5);
+    }
+}

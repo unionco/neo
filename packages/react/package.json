@@ -1,0 +1,56 @@
+{
+  "name": "@playcore/react",
+  "version": "0.0.1",
+  "description": "React specific wrapper for @union/neo-core",
+  "keywords": [
+    "stenciljs",
+    "union",
+    "react",
+    "design system"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && npm run copy && npm run compile && npm run rollup",
+    "clean": "rm -rf dist && rm -rf dist-transpiled",
+    "compile": "npm run tsc",
+    "rollup": "rollup -c",
+    "release": "np --any-branch --yolo --no-release-draft",
+    "lint": "tslint --project .",
+    "lint.fix": "tslint --project . --fix",
+    "tsc": "tsc -p .",
+    "copy": "node scripts/copy.js",
+    "test.treeshake": "node scripts/treeshaking.js dist/index.esm.js"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/components.d.ts",
+  "files": [
+    "dist/",
+    "css/"
+  ],
+  "dependencies": {
+    "@types/react": "^16.9.7",
+    "tslib": "*"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/node": "10.12.9",
+    "@types/react-dom": "^16.8.5",
+    "fs-extra": "^8.1.0",
+    "np": "^5.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-testing-library": "^7.0.0",
+    "rollup": "^1.24.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-virtual": "^1.0.1",
+    "tslint": "^5.18.0",
+    "tslint-ionic-rules": "0.0.21",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3"
+  }
+}

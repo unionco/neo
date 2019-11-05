@@ -1,0 +1,67 @@
+@import '../../../node_modules/swiper/css/swiper.css';
+
+neo-slides {
+  --nav-button-color: rgba(0, 0, 0, 0.15);
+  --bullet-background: rgba(0, 0, 0, 0.15);
+  --progress-bar-background: rgba(0, 0, 0, 0.15);
+  --scroll-bar-background: rgba(0, 0, 0, 0.15);
+
+  --nav-button-color-active: var(--neo-color-primary);
+  --bullet-background-active: var(--neo-color-primary);
+  --progress-bar-background-active: var(--neo-color-primary);
+  --scroll-bar-background-active: var(--neo-color-primary);
+
+  --height: 400px;
+  --swiper-navigation-size: 24px;
+
+  display: block;
+  user-select: none;
+}
+
+.swiper-container {
+  display: block;
+  height: var(--height);
+  width: 100%;
+}
+
+// Pagination Bullets
+// --------------------------------------------------
+
+.swiper-pagination-bullet {
+  background: var(--bullet-background);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--bullet-background-active);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--nav-button-color-active);
+}
+
+.swiper-button-disabled {
+  color: var(--nav-button-color);
+}
+
+// Pagination Progress Bar
+// --------------------------------------------------
+
+.swiper-pagination-progressbar {
+  background: var(--progress-bar-background);
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--progress-bar-background-active);
+}
+
+// Scrollbar
+// --------------------------------------------------
+
+.swiper-scrollbar {
+  background: var(--scroll-bar-background);
+}
+
+.swiper-scrollbar-drag {
+  background: var(--scroll-bar-background-active);
+}

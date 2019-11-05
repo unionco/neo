@@ -1,0 +1,131 @@
+.wysiwyg {
+    $multiplier: 4px;
+
+    --neo-wysiwyg-font-size: 12px;
+
+    @for $i from 1 through 12 {
+        --neo-wysiwyg-font-#{$i}: calc(#{$multiplier} * #{$i});
+    }
+
+    display: block;
+    font-size: var(--neo-wysiwyg-font-size);
+}
+
+.wysiwyg.base-14 {
+    --neo-wysiwyg-font-size: 14px;
+}
+
+.wysiwyg.base-16 {
+    --neo-wysiwyg-font-size: 16px;
+}
+
+.wysiwyg.base-18 {
+    --neo-wysiwyg-font-size: 18px;
+}
+
+.wysiwyg-native {
+    font-size: var(--neo-wysiwyg-font-size);
+
+    a:not(neo-button) {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    p,
+    ul {
+        line-height: 1;
+        margin: 0.8em 0;
+
+        &:first-child {
+            margin-top: 1px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h1 {
+        font-size: var(--neo-wysiwyg-font-12);
+        margin-bottom: calc(var(--neo-proximty-scale) * 5);
+    }
+
+    h2 {
+        font-size: var(--neo-wysiwyg-font-10);
+        margin-bottom: calc(var(--neo-proximty-scale) * 4);
+    }
+
+    h3 {
+        font-size: var(--neo-wysiwyg-font-8);
+        margin-bottom: calc(var(--neo-proximty-scale) * 3);
+    }
+
+    h4 {
+        font-size: var(--neo-wysiwyg-font-7);
+        margin-bottom: calc(var(--neo-proximty-scale) * 2.5);
+    }
+
+    h5 {
+        font-size: var(--neo-wysiwyg-font-5);
+        margin-bottom: calc(var(--neo-proximty-scale) * 2);
+    }
+
+    ul,
+    ol {
+        padding-left: 40px;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul ul,
+    ol ul {
+        list-style-type: circle;
+        margin-left: 1.5em;
+    }
+
+    ol ol,
+    ul ol {
+        list-style-type: lower-latin;
+        margin-left: 1.5em;
+    }
+
+    li {
+        line-height: 1.9;
+    }
+
+    p {
+        line-height: 1.9;
+    }
+
+    hr {
+        margin: 2.5em 0;
+    }
+
+    blockquote {
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        font-style: italic;
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

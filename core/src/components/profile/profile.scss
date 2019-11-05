@@ -1,0 +1,68 @@
+:host {
+    --border-radius: 0;
+    --align-items: center;
+    --layout: row;
+    --justify-content: flex-start;
+
+    display: block;
+    margin-bottom: 16px;
+}
+
+::slotted([slot="start"]) {
+    border-radius: var(--border-radius);
+    height: 64px;
+    margin-right: 16px;
+    width: 64px;
+    overflow: hidden;
+}
+
+::slotted([slot="end"]) {
+    border-radius: var(--border-radius);
+    height: 64px;
+    margin-left: 16px;
+    width: 64px;
+    overflow: hidden;
+}
+
+:host(.u-col) {
+    --align-items: center;
+    --layout: column;
+    --justify-content: center;
+
+    ::slotted([slot="start"]) {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    ::slotted([slot="end"]) {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+
+    .profile-inner-content {
+        align-items: center;
+    }
+}
+
+:host(.u-rounded) {
+    --border-radius: 50%;
+}
+
+.profile-inner {
+    align-items: var(--align-items);
+    display: flex;
+    flex-direction: var(--layout);
+    justify-content: var(--justify-content);
+
+    &-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+
+        ::slotted(*) {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

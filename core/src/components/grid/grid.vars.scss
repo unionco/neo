@@ -1,0 +1,26 @@
+@import "../../theme/neo.globals";
+@import "./grid.mixins";
+
+// Grid
+// --------------------------------------------------
+
+/// @prop - The padding for the grid
+$grid-padding:               var(--neo-grid-padding, 5px) !default;
+
+/// @prop - The padding for the grid at different breakpoints
+$grid-paddings: (
+  xs: var(--neo-grid-padding-xs, $grid-padding),
+  sm: var(--neo-grid-padding-sm, $grid-padding),
+  md: var(--neo-grid-padding-md, $grid-padding),
+  lg: var(--neo-grid-padding-lg, $grid-padding),
+  xl: var(--neo-grid-padding-xl, $grid-padding)
+) !default;
+
+/// @prop - Width of the grid for different screen sizes when fixed is enabled
+$grid-widths: (
+  xs: var(--neo-grid-width-xs, var(--neo-grid-width, 100%)),
+  sm: var(--neo-grid-width-sm, var(--neo-grid-width, 540px)),
+  md: var(--neo-grid-width-md, var(--neo-grid-width, 720px)),
+  lg: var(--neo-grid-width-lg, var(--neo-grid-width, 960px)),
+  xl: var(--neo-grid-width-xl, var(--neo-grid-width, 1140px))
+) !default;

@@ -1,0 +1,29 @@
+
+// Global Utility Functions
+@import "./neo.functions.string";
+
+// Global Color Functions
+@import "./neo.functions.color";
+
+// Global Mixins
+@import "./neo.mixins";
+
+// Colors
+@import "./neo.colors";
+
+// Default General
+// --------------------------------------------------
+$font-family-base:                  var(--neo-font-family, inherit) !default;
+
+// Global font path
+$font-path: "/dist/fonts" !default;
+
+// The minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries
+$screen-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;

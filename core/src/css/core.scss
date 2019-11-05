@@ -1,0 +1,46 @@
+@import "../theme/neo.globals";
+
+html {
+  --neo-default-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+  --neo-font-family: var(--neo-default-font);
+}
+
+body {
+  background: var(--neo-background-color);
+}
+
+body.backdrop-no-scroll {
+  overflow: hidden;
+}
+
+// Ionic Colors
+// --------------------------------------------------
+// Generates the color classes and variables based on the
+// colors map
+
+@mixin generate-color($color-name) {
+  $value: map-get($colors, $color-name);
+
+  $base: map-get($value, base);
+  $contrast: map-get($value, contrast);
+  $shade: map-get($value, shade);
+  $tint: map-get($value, tint);
+
+  --neo-color-base: var(--neo-color-#{$color-name}, #{$base}) !important;
+  --neo-color-base-rgb: var(--neo-color-#{$color-name}-rgb, #{color-to-rgb-list($base)}) !important;
+  --neo-color-contrast: var(--neo-color-#{$color-name}-contrast, #{$contrast}) !important;
+  --neo-color-contrast-rgb: var(--neo-color-#{$color-name}-contrast-rgb, #{color-to-rgb-list($contrast)}) !important;
+  --neo-color-shade: var(--neo-color-#{$color-name}-shade, #{$shade}) !important;
+  --neo-color-tint: var(--neo-color-#{$color-name}-tint, #{$tint}) !important;
+}
+
+@each $color-name, $value in $colors {
+  .neo-color-#{$color-name} {
+    @include generate-color($color-name);
+  }
+}
+
+[hidden] {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: none !important;
+}
