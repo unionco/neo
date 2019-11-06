@@ -33,7 +33,7 @@ Neo can be used in vanilla and react projects.
 </head>
 <body>
   <neo-button>Neo Button</neo-button>
-  <script src="https://unpkg.com/@union/neo-core@0.0.6/dist/neo.js"></script>
+  <script src="https://unpkg.com/@neo/core@0.0.6/dist/neo.js"></script>
 </body>
 </html>
 ```
@@ -41,29 +41,29 @@ Neo can be used in vanilla and react projects.
 #### For React
 
 ##### Install
-`npm install @union/neo-react`
+`npm install @neo/react`
 
 ##### Usage
 ```js
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { NeoButtons, NeoButton } from '@union/neo-react';
+import { NeoButtons, NeoButton } from '@neo/react';
 
 /* Core CSS required for Neo components to work properly */
-import '@union/neo-react/css/core.css';
+import '@neo/react/css/core.css';
 
 /* Basic CSS for apps built with Neo */
-import '@union/neo-react/css/normalize.css';
-import '@union/neo-react/css/structure.css';
-import '@union/neo-react/css/typography.css';
+import '@neo/react/css/normalize.css';
+import '@neo/react/css/structure.css';
+import '@neo/react/css/typography.css';
 
 /* Optional CSS utils that can be commented out */
-import '@union/neo-react/css/padding.css';
-import '@union/neo-react/css/text-alignment.css';
-import '@union/neo-react/css/text-transformation.css';
-import '@union/neo-react/css/flex-utils.css';
-import '@union/neo-react/css/display.css';
+import '@neo/react/css/padding.css';
+import '@neo/react/css/text-alignment.css';
+import '@neo/react/css/text-transformation.css';
+import '@neo/react/css/flex-utils.css';
+import '@neo/react/css/display.css';
 
 function App() {
   return (
