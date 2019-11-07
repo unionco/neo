@@ -141,7 +141,7 @@
 //   }, '');
 // }
 
-// export default function expose(arg) {
+// export default function expose(arg: string|Array<any>) {
 //   if (typeof arg === 'string') {
 //     return bp => slopeCalc({ [arg]: bp })
 //   }

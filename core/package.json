@@ -1,7 +1,7 @@
 {
-  "name": "@neo/core",
+  "name": "@union/core",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Core stencil component library for Union sites",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -42,6 +42,10 @@
     "ts-loader": "^6.2.1"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unionco/neo.git"
+  },
   "dependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",

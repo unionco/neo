@@ -10,7 +10,7 @@ export const config: Config = {
   preamble: '(C) Union https://union.co - MIT License',
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: '@neo/core',
+      componentCorePackage: '@union/core',
       proxiesFile: '../packages/react/src/components.ts',
     }),
     {

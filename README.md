@@ -9,8 +9,8 @@ Neo is based on [Web Components](https://www.webcomponents.org/introduction) and
 
 | Project | Package | Version | Links |
 | ------- | ------- | ------- |:-----:|
-| **Core** | [`@neo/core`](https://www.npmjs.com/package/@neo/core) | [![version](https://img.shields.io/npm/v/@neo/core/latest.svg)](https://www.npmjs.com/package/@neo/core) | [`README.md`](core/README.md)
-| **React** | [`@neo/react`](https://www.npmjs.com/package/@neo/react) | [![version](https://img.shields.io/npm/v/@neo/react/latest.svg)](https://www.npmjs.com/package/@neo/react) | [`README.md`](packages/react/README.md)
+| **Core** | [`@union/core`](https://www.npmjs.com/package/@union/core) | [![version](https://img.shields.io/npm/v/@union/core/latest.svg)](https://www.npmjs.com/package/@union/core) | [`README.md`](core/README.md)
+| **React** | [`@union/react`](https://www.npmjs.com/package/@union/react) | [![version](https://img.shields.io/npm/v/@union/react/latest.svg)](https://www.npmjs.com/package/@union/react) | [`README.md`](packages/react/README.md)
 
 ### Getting Started
 
@@ -33,7 +33,7 @@ Neo can be used in vanilla and react projects.
 </head>
 <body>
   <neo-button>Neo Button</neo-button>
-  <script src="https://unpkg.com/@neo/core@0.0.6/dist/neo.js"></script>
+  <script src="https://unpkg.com/@union/core@0.0.6/dist/neo.js"></script>
 </body>
 </html>
 ```
@@ -41,29 +41,29 @@ Neo can be used in vanilla and react projects.
 #### For React
 
 ##### Install
-`npm install @neo/react`
+`npm install @union/react`
 
 ##### Usage
 ```js
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { NeoButtons, NeoButton } from '@neo/react';
+import { NeoButtons, NeoButton } from '@union/react';
 
 /* Core CSS required for Neo components to work properly */
-import '@neo/react/css/core.css';
+import '@union/react/css/core.css';
 
 /* Basic CSS for apps built with Neo */
-import '@neo/react/css/normalize.css';
-import '@neo/react/css/structure.css';
-import '@neo/react/css/typography.css';
+import '@union/react/css/normalize.css';
+import '@union/react/css/structure.css';
+import '@union/react/css/typography.css';
 
 /* Optional CSS utils that can be commented out */
-import '@neo/react/css/padding.css';
-import '@neo/react/css/text-alignment.css';
-import '@neo/react/css/text-transformation.css';
-import '@neo/react/css/flex-utils.css';
-import '@neo/react/css/display.css';
+import '@union/react/css/padding.css';
+import '@union/react/css/text-alignment.css';
+import '@union/react/css/text-transformation.css';
+import '@union/react/css/flex-utils.css';
+import '@union/react/css/display.css';
 
 function App() {
   return (

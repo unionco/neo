@@ -8,7 +8,7 @@ const tc = require('turbocolor');
 
 const rootDir = path.join(__dirname, '../');
 
-const namespace = "@client";
+const namespace = "@union";
 const packages = [
   'core',
   'packages/react',
