@@ -9,6 +9,10 @@
     "design system"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unionco/neo.git"
+  },
   "scripts": {
     "build": "npm run clean && npm run copy && npm run compile && npm run rollup",
     "clean": "rm -rf dist && rm -rf dist-transpiled",

@@ -2,9 +2,9 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from '@neo/core';
+import { JSX } from '@union/core';
 
-import { defineCustomElements, applyPolyfills } from '@neo/core/loader';
+import { defineCustomElements, applyPolyfills } from '@union/core/loader';
 
 applyPolyfills().then(() => { defineCustomElements(window); });
 export const NeoAccordion = createReactComponent<JSX.NeoAccordion, HTMLNeoAccordionElement>('neo-accordion');
