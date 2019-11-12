@@ -7,7 +7,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  Color,
+} from './interface';
 
 export namespace Components {
   interface NeoAccordion {
@@ -23,6 +25,7 @@ export namespace Components {
   interface NeoAccordionItem {
     'toggle': () => Promise<void>;
   }
+  interface NeoApp {}
   interface NeoCard {
     /**
     * Layout of container (flex) row or column
@@ -48,6 +51,20 @@ export namespace Components {
     * The first name
     */
     'prop': string;
+  }
+  interface NeoChip {
+    /**
+    * Addes activatable class and adds hover states
+    */
+    'clickable': boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * Display an outline style button.
+    */
+    'outline': boolean;
   }
   interface NeoCol {
     /**
@@ -249,6 +266,12 @@ declare global {
     new (): HTMLNeoAccordionItemElement;
   };
 
+  interface HTMLNeoAppElement extends Components.NeoApp, HTMLStencilElement {}
+  var HTMLNeoAppElement: {
+    prototype: HTMLNeoAppElement;
+    new (): HTMLNeoAppElement;
+  };
+
   interface HTMLNeoCardElement extends Components.NeoCard, HTMLStencilElement {}
   var HTMLNeoCardElement: {
     prototype: HTMLNeoCardElement;
@@ -265,6 +288,12 @@ declare global {
   var HTMLNeoCardHeaderElement: {
     prototype: HTMLNeoCardHeaderElement;
     new (): HTMLNeoCardHeaderElement;
+  };
+
+  interface HTMLNeoChipElement extends Components.NeoChip, HTMLStencilElement {}
+  var HTMLNeoChipElement: {
+    prototype: HTMLNeoChipElement;
+    new (): HTMLNeoChipElement;
   };
 
   interface HTMLNeoColElement extends Components.NeoCol, HTMLStencilElement {}
@@ -347,9 +376,11 @@ declare global {
   interface HTMLElementTagNameMap {
     'neo-accordion': HTMLNeoAccordionElement;
     'neo-accordion-item': HTMLNeoAccordionItemElement;
+    'neo-app': HTMLNeoAppElement;
     'neo-card': HTMLNeoCardElement;
     'neo-card-content': HTMLNeoCardContentElement;
     'neo-card-header': HTMLNeoCardHeaderElement;
+    'neo-chip': HTMLNeoChipElement;
     'neo-col': HTMLNeoColElement;
     'neo-copy': HTMLNeoCopyElement;
     'neo-eyebrow': HTMLNeoEyebrowElement;
@@ -387,6 +418,7 @@ declare namespace LocalJSX {
     */
     'onItemOpen'?: (event: CustomEvent<{ item: HTMLElement }>) => void;
   }
+  interface NeoApp {}
   interface NeoCard {
     /**
     * Layout of container (flex) row or column
@@ -412,6 +444,20 @@ declare namespace LocalJSX {
     * The first name
     */
     'prop'?: string;
+  }
+  interface NeoChip {
+    /**
+    * Addes activatable class and adds hover states
+    */
+    'clickable'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * Display an outline style button.
+    */
+    'outline'?: boolean;
   }
   interface NeoCol {
     /**
@@ -607,9 +653,11 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'neo-accordion': NeoAccordion;
     'neo-accordion-item': NeoAccordionItem;
+    'neo-app': NeoApp;
     'neo-card': NeoCard;
     'neo-card-content': NeoCardContent;
     'neo-card-header': NeoCardHeader;
+    'neo-chip': NeoChip;
     'neo-col': NeoCol;
     'neo-copy': NeoCopy;
     'neo-eyebrow': NeoEyebrow;
@@ -634,9 +682,11 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'neo-accordion': LocalJSX.NeoAccordion & JSXBase.HTMLAttributes<HTMLNeoAccordionElement>;
       'neo-accordion-item': LocalJSX.NeoAccordionItem & JSXBase.HTMLAttributes<HTMLNeoAccordionItemElement>;
+      'neo-app': LocalJSX.NeoApp & JSXBase.HTMLAttributes<HTMLNeoAppElement>;
       'neo-card': LocalJSX.NeoCard & JSXBase.HTMLAttributes<HTMLNeoCardElement>;
       'neo-card-content': LocalJSX.NeoCardContent & JSXBase.HTMLAttributes<HTMLNeoCardContentElement>;
       'neo-card-header': LocalJSX.NeoCardHeader & JSXBase.HTMLAttributes<HTMLNeoCardHeaderElement>;
+      'neo-chip': LocalJSX.NeoChip & JSXBase.HTMLAttributes<HTMLNeoChipElement>;
       'neo-col': LocalJSX.NeoCol & JSXBase.HTMLAttributes<HTMLNeoColElement>;
       'neo-copy': LocalJSX.NeoCopy & JSXBase.HTMLAttributes<HTMLNeoCopyElement>;
       'neo-eyebrow': LocalJSX.NeoEyebrow & JSXBase.HTMLAttributes<HTMLNeoEyebrowElement>;

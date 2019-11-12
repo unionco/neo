@@ -7,9 +7,15 @@
     margin: 16px;
 }
 
+::slotted(neo-chip) {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
 :host(.u-col) {
     ::slotted(neo-copy) {
-        padding: 0 16px;
+        padding: 24px 0;
     }
 }
 

@@ -7,6 +7,8 @@
 }
 
 :host(.eyebrow) {
+    align-items: center;
+    display: flex;
     font-size: var(--neo-eyebrow-font-size);
     font-weight: var(--neo-eyebrow-font-weight);
     font-family: var(--neo-eyebrow-font-family);

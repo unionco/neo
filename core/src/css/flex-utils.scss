@@ -5,6 +5,20 @@
 
 // Align Self
 // --------------------------------------------------
+.neo-flex,
+[neo-flex] {
+  display: flex;
+}
+
+.neo-flex-row,
+[neo-flex-row] {
+  flex-direction: row;
+}
+
+.neo-flex-column,
+[neo-flex-column] {
+  flex-direction: column;
+}
 
 .neo-align-self-start,
 [align-self-start] {
