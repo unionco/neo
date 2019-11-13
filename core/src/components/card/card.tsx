@@ -28,9 +28,10 @@ export class Card implements ComponentInterface {
     return (
       <Host
         class={{
-          'has-background': mediabehind,
-          'u-reverse': reverse,
           [`u-${layout}`]: true,
+          'neo-small': true,
+          'u-reverse': reverse,
+          'has-background': mediabehind,
         }}>
         <slot></slot>
       </Host>

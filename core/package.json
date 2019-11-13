@@ -21,15 +21,14 @@
     "build.stencil": "stencil build --docs",
     "clean": "node scripts/clean.js",
     "css.minify": "cleancss -O2 -o ./css/bundle.css ./css/bundle.css",
-    "css.sass": "sass src/css:./css",
+    "css.sass": "sass src/css:./css --watch",
     "start": "npm run build.css && stencil build --dev --watch --serve",
     "dev": "npm run build.css && stencil build --watch",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "concurrently \"start-storybook --port 9001\" \"npm run dev\"",
-    "storybook-only": "start-storybook --port 9001",
-    "g": "schematics ./node_modules/@union/neo-schematics/src/collection.json:schematics --debug=false"
+    "storybook-only": "start-storybook --port 9001"
   },
   "devDependencies": {
     "@stencil/core": "^1.7.5",
@@ -62,6 +61,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "plyr": "^3.5.6",
+    "rfs": "^9.0.2",
     "storybook": "^5.1.11",
     "swiper": "^5.2.0",
     "typescript": "^3.6.2",

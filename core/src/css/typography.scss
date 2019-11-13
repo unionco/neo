@@ -1,35 +1,57 @@
+@import "../../node_modules/rfs/scss";
 @import "../theme/neo.globals";
 @import "../theme/neo.mixins";
 
-// Typography
+// Vendor
 // --------------------------------------------------
 
+$rfs-base-value: 1rem !default;
+
+$rfs-unit: rem !default;
+
+// Typography
+// --------------------------------------------------
+:root {
+  // --display-font-size: rfs(7rem);
+}
+
 /// @prop - Font weight of all headings
-$headings-font-weight:         700 !default;
+$base-font-size:               var(--neo-font-base, 16px) !default;
+
+/// @prop - Font weight of all headings
+$headings-font-weight:         var(--neo-font-bold-weight) !default;
 
 /// @prop - Line height of all headings
-$headings-line-height:         1.2 !default;
+$headings-line-height:         var(--neo-heading-line-height, 1.2);
+
+/// @prop - Line height of all headings
+$base-line-height:             var(--neo-base-line-height, 2);
 
 /// @prop - Font size of heading level 1
-$h1-font-size:                 26px !default;
+$display-font-size:            7rem !default;
+
+/// @prop - Font size of heading level 1
+$h1-font-size:                 5rem !default;
 
 /// @prop - Font size of heading level 2
-$h2-font-size:                 24px !default;
+$h2-font-size:                 4rem !default;
 
 /// @prop - Font size of heading level 3
-$h3-font-size:                 22px !default;
+$h3-font-size:                 3rem !default;
 
 /// @prop - Font size of heading level 4
-$h4-font-size:                 20px !default;
+$h4-font-size:                 2rem !default;
 
 /// @prop - Font size of heading level 5
-$h5-font-size:                 18px !default;
+$h5-font-size:                 1rem !default;
 
 /// @prop - Font size of heading level 6
-$h6-font-size:                 16px !default;
+$h6-font-size:                 0.75rem !default;
 
-html {
-  font-family: var(--neo-font-family);
+html,
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 a {
@@ -50,32 +72,142 @@ h6 {
   line-height: $headings-line-height;
 }
 
+h1.neo-display {
+  @include font-size($display-font-size);
+}
+
 h1 {
   @include margin(20px, null, null, null);
-
-  font-size: $h1-font-size;
+  @include font-size($h1-font-size);
 }
 
 h2 {
   @include margin(18px, null, null, null);
-
-  font-size: $h2-font-size;
+  @include font-size($h2-font-size);
 }
 
 h3 {
-  font-size: $h3-font-size;
+  @include font-size($h3-font-size);
 }
 
 h4 {
-  font-size: $h4-font-size;
+  @include font-size($h4-font-size);
 }
 
 h5 {
-  font-size: $h5-font-size;
+  @include font-size($h5-font-size);
 }
 
 h6 {
-  font-size: $h6-font-size;
+  @include font-size($h6-font-size);
+}
+
+[eyebrow] {
+  font-size: var(--neo-eyebrow-font-size, 1rem);
+  font-weight: var(--neo-eyebrow-font-weight, 700);
+  font-family: var(--neo-eyebrow-font-family, var(--neo-font-family));
+  letter-spacing: var(--neo-eyebrow-letter-spacing, 1.5px);
+  margin: 0;
+  padding: 0;
+  text-transform: var(--neo-eyebrow-text-transform, uppercase);
+}
+
+.neo-large,
+[large] {
+  --neo-content-scale: 1.25;
+  h1.neo-display {
+    @include font-size($display-font-size * 1.25);
+  }
+
+  h1 {
+    @include font-size($h1-font-size * 1.25);
+  }
+
+  h2 {
+    @include font-size($h2-font-size * 1.25);
+  }
+
+  h3 {
+    @include font-size($h3-font-size * 1.25);
+  }
+
+  h4 {
+    @include font-size($h4-font-size * 1.25);
+  }
+
+  h5 {
+    @include font-size($h5-font-size * 1.25);
+  }
+
+  h6 {
+    @include font-size($h6-font-size * 1.25);
+  }
+}
+
+.neo-medium,
+[medium] {
+  --neo-content-scale: 0.75;
+
+  h1.neo-display {
+    @include font-size($display-font-size * 0.75);
+  }
+
+  h1 {
+    @include font-size($h1-font-size * 0.75);
+  }
+
+  h2 {
+    @include font-size($h2-font-size * 0.75);
+  }
+
+  h3 {
+    @include font-size($h3-font-size * 0.75);
+  }
+
+  h4 {
+    @include font-size($h4-font-size * 0.75);
+  }
+
+  h5 {
+    @include font-size($h5-font-size * 0.75);
+  }
+
+  h6 {
+    @include font-size($h6-font-size * 0.75);
+  }
+}
+
+.neo-small,
+[small] {
+  --neo-content-scale: 0.5;
+
+  h1.neo-display {
+    @include font-size($display-font-size * 0.5);
+  }
+
+  h1 {
+    @include font-size($h1-font-size * 0.5);
+  }
+
+  h2 {
+    @include font-size($h2-font-size * 0.5);
+  }
+
+  h3 {
+    @include font-size($h3-font-size * 0.5);
+  }
+
+  h4 {
+    @include font-size($h4-font-size * 0.5);
+  }
+
+  h5 {
+    @include font-size($h5-font-size * 0.5);
+  }
+
+  h6 {
+    @include font-size($h6-font-size * 0.5);
+  }
 }
 
 small {
