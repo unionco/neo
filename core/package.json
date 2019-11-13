@@ -21,7 +21,7 @@
     "build.stencil": "stencil build --docs",
     "clean": "node scripts/clean.js",
     "css.minify": "cleancss -O2 -o ./css/bundle.css ./css/bundle.css",
-    "css.sass": "sass src/css:./css --watch",
+    "css.sass": "sass src/css:./css",
     "start": "npm run build.css && stencil build --dev --watch --serve",
     "dev": "npm run build.css && stencil build --watch",
     "test": "stencil test --spec --e2e",

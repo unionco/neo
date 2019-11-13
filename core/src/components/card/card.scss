@@ -24,16 +24,20 @@
     flex-direction: row;
 
     ::slotted(neo-copy) {
-        padding: 0 0 0 40px;
-        max-width: 350px;
+        // max-width: 350px;
+    }
+
+    ::slotted(neo-img) {
+        margin-right: 40px;
     }
 }
 
 :host(.u-row.u-reverse) {
     flex-direction: row-reverse;
 
-    ::slotted(neo-copy) {
-        padding: var(--copy-inner-padding);
+    ::slotted(neo-img) {
+        margin-left: 40px;
+        margin-right: 0px;
     }
 }
 

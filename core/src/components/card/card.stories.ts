@@ -59,7 +59,7 @@ storiesOf('Card', module)
             <neo-card mediabehind>
               <neo-img src="https://placehold.it/345x200.png"></neo-img>
               <neo-copy>
-                <neo-heading size="4">Card Component</neo-heading>
+                <h2>Card Component</h2>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -72,7 +72,7 @@ storiesOf('Card', module)
             <neo-card mediabehind>
               <neo-img src="https://placehold.it/345x200.png"></neo-img>
               <neo-copy>
-                <neo-heading size="4">Card Component</neo-heading>
+                <h2>Card Component</h2>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -85,7 +85,7 @@ storiesOf('Card', module)
             <neo-card mediabehind>
               <neo-img src="https://placehold.it/345x200.png"></neo-img>
               <neo-copy>
-                <neo-heading size="4">Card Component</neo-heading>
+                <h2>Card Component</h2>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -210,6 +210,61 @@ storiesOf('Card', module)
                   </p>
                 </neo-wysiwyg>
               </neo-copy>
+            </neo-card>
+          </neo-col>
+        </neo-row>
+      </neo-grid>
+    `;
+  })
+  .add('Definition', (): string => {
+    return `
+      <neo-grid>
+        <neo-row>
+          <neo-col size="12">
+            <neo-card class="neo-justify-content-between" layout="row">
+              <neo-grid>
+                <neo-row>
+                  <neo-col size="6">
+                    <h2 no-margin>Definition Card</h2>
+                  </neo-col>
+                  <neo-col size="6">
+                    <neo-wysiwyg base="18">
+                      <p>
+                        Body Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum. Body Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum.
+                      </p>
+                      <button>Primary Action CTA</button>
+                    </neo-wysiwyg>
+                  </neo-col>
+                </neo-row>
+              </neo-grid>
+            </neo-card>
+          </neo-col>
+        </neo-row>
+      </neo-grid>
+    `;
+  })
+  .add('Spanning Stripe', (): string => {
+    return `
+      <neo-grid>
+        <neo-row>
+          <neo-col size="12">
+            <neo-card class="neo-justify-content-between" layout="row">
+              <neo-grid>
+                <neo-row>
+                  <neo-col size="6">
+                    <p eyebrow>Eyebrow Text</p>
+                    <h2>Definition Card</h2>
+                    <neo-wysiwyg base="18">
+                      <p>
+                        Body Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum. Body Copy of up to three lines
+                      </p>
+                    </neo-wysiwyg>
+                  </neo-col>
+                  <neo-col class="neo-flex neo-align-items-center" size="4" offset="2">
+                    <button>Primary Action CTA</button>
+                  </neo-col>
+                </neo-row>
+              </neo-grid>
             </neo-card>
           </neo-col>
         </neo-row>
