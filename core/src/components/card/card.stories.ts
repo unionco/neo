@@ -124,6 +124,10 @@ storiesOf('Card', module)
                   </p>
                 </neo-wysiwyg>
               </neo-copy>
+              <neo-buttons>
+                <neo-button color="primary">Primary</neo-button>
+                <neo-button color="primary" fill="clear">Secondary</neo-button>
+              </neo-buttons>
             </neo-card>
           </neo-col>
           <neo-col size="12" size-md="4">
@@ -147,6 +151,10 @@ storiesOf('Card', module)
                   </p>
                 </neo-wysiwyg>
               </neo-copy>
+              <neo-buttons>
+                <neo-button color="primary">Primary</neo-button>
+                <neo-button color="primary" fill="clear">Secondary</neo-button>
+              </neo-buttons>
             </neo-card>
           </neo-col>
           <neo-col size="12" size-md="4">
@@ -171,6 +179,10 @@ storiesOf('Card', module)
                   </p>
                 </neo-wysiwyg>
               </neo-copy>
+              <neo-buttons>
+                <neo-button color="primary">Primary</neo-button>
+                <neo-button color="primary" fill="clear">Secondary</neo-button>
+              </neo-buttons>
             </neo-card>
           </neo-col>
         </neo-row>

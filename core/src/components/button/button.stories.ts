@@ -7,7 +7,7 @@ storiesOf('Buttons', module)
       <p>All types of CTA's</p>
       <div>
         <p eyebrow>Colors</p>
-        <neo-buttons layout="col">
+        <neo-buttons>
           <neo-button color="primary">Primary</neo-button>
           <neo-button color="secondary">Secondary</neo-button>
           <neo-button color="tertiary">Tertiary</neo-button>
@@ -20,14 +20,14 @@ storiesOf('Buttons', module)
         </neo-buttons>
 
         <p eyebrow>Sizes</p>
-        <neo-buttons layout="col">
+        <neo-buttons class="neo-align-items-end">
           <neo-button size="large" color="primary">Large</neo-button>
           <neo-button color="primary">Default</neo-button>
           <neo-button size="small" color="primary">Small</neo-button>
         </neo-buttons>
 
         <p eyebrow>Outline</p>
-        <neo-buttons layout="col">
+        <neo-buttons>
           <neo-button fill="outline" color="primary">Primary</neo-button>
           <neo-button fill="outline" color="secondary">Secondary</neo-button>
           <neo-button fill="outline" color="tertiary">Tertiary</neo-button>
@@ -40,7 +40,7 @@ storiesOf('Buttons', module)
         </neo-buttons>
 
         <p eyebrow>Clear</p>
-        <neo-buttons layout="col">
+        <neo-buttons>
           <neo-button fill="clear" color="primary">Primary</neo-button>
           <neo-button fill="clear" color="secondary">Secondary</neo-button>
           <neo-button fill="clear" color="tertiary">Tertiary</neo-button>

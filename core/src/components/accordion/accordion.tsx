@@ -50,7 +50,11 @@ export class Accordion {
 
   render() {
     return (
-      <Host>
+      <Host
+        class={{
+          'neo-small': true
+        }}
+      >
         <div class="accordion-inner">
           <slot></slot>
         </div>

@@ -14,7 +14,7 @@ storiesOf('Accordion', module)
         <neo-accordion>
           <neo-accordion-item>
             <div slot="trigger">
-              <h2>Test</h2>
+              <h3>Test</h3>
             </div>
             <div slot="content">
               <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
@@ -23,7 +23,7 @@ storiesOf('Accordion', module)
 
           <neo-accordion-item>
             <div slot="trigger">
-              <h2>Test</h2>
+              <h3>Test</h3>
             </div>
             <div slot="content">
               <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
@@ -32,7 +32,7 @@ storiesOf('Accordion', module)
 
           <neo-accordion-item>
             <div slot="trigger">
-              <h2>Test</h2>
+              <h3>Test</h3>
             </div>
             <div slot="content">
               <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
@@ -55,7 +55,7 @@ storiesOf('Accordion', module)
         <neo-accordion close-others="true">
           <neo-accordion-item>
             <div slot="trigger">
-              <h2>Test</h2>
+              <h3>Test</h3>
             </div>
             <div slot="content">
               <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
@@ -64,7 +64,7 @@ storiesOf('Accordion', module)
 
           <neo-accordion-item>
             <div slot="trigger">
-              <h2>Test</h2>
+              <h3>Test</h3>
             </div>
             <div slot="content">
               <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
@@ -73,7 +73,7 @@ storiesOf('Accordion', module)
 
           <neo-accordion-item>
             <div slot="trigger">
-              <h2>Test</h2>
+              <h3>Test</h3>
             </div>
             <div slot="content">
               <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
