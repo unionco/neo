@@ -7,10 +7,10 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
-                <h2>Card Component</h2>
+                <p eyebrow>Eyebrow Text</p>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -21,10 +21,10 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
-                <h2>Card Component</h2>
+                <p eyebrow>Eyebrow Text</p>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -35,10 +35,10 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
-                <h2>Card Component</h2>
+                <p eyebrow>Eyebrow Text</p>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -57,9 +57,9 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <h2>Card Component</h2>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -70,9 +70,9 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <h2>Card Component</h2>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -83,9 +83,9 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <h2>Card Component</h2>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -105,19 +105,19 @@ storiesOf('Card', module)
           <neo-col size="12" size-md="4">
             <neo-card>
               <neo-chip>Featured</neo-chip>
-              <neo-img src="https://placehold.it/345x200.png" alt="product"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
               <neo-copy>
                 <neo-grid no-padding>
                   <neo-row>
                     <neo-col size="6" no-padding>
-                      <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
+                      <p eyebrow>Eyebrow Text</p>
                     </neo-col>
                     <neo-col class="neo-flex neo-justify-content-end" size="6" no-padding>
                       <span>$39</span>
                     </neo-col>
                   </neo-row>
                 </neo-grid>
-                <h2>Product Card</h2>
+                <h3>Product Card</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -128,19 +128,19 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png" alt="product"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
               <neo-copy>
                 <neo-grid no-padding>
                   <neo-row>
                     <neo-col size="6" no-padding>
-                      <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
+                      <p eyebrow>Eyebrow Text</p>
                     </neo-col>
                     <neo-col class="neo-flex neo-justify-content-end" size="6" no-padding>
                       <span>$39</span>
                     </neo-col>
                   </neo-row>
                 </neo-grid>
-                <h2>Product Card</h2>
+                <h3>Product Card</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -151,20 +151,20 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-chip>Featured</neo-chip>
-              <neo-img src="https://placehold.it/345x200.png" alt="product"></neo-img>
+              <neo-chip color="primary">Featured</neo-chip>
+              <neo-img src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
               <neo-copy>
                 <neo-grid no-padding>
                   <neo-row>
                     <neo-col size="6" no-padding>
-                      <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
+                      <p eyebrow>Eyebrow Text</p>
                     </neo-col>
                     <neo-col class="neo-flex neo-justify-content-end" size="6" no-padding>
                       <span>$39</span>
                     </neo-col>
                   </neo-row>
                 </neo-grid>
-                <h2>Product Card</h2>
+                <h3>Product Card</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -183,10 +183,10 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="6">
             <neo-card layout="row" reverse>
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
-                <h2>Card Component</h2>
+                <p eyebrow>Eyebrow Text</p>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -200,10 +200,10 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="6">
             <neo-card layout="row">
-              <neo-img src="https://placehold.it/345x200.png"></neo-img>
+              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-copy>
-                <neo-eyebrow upper="true">Eyebrow Text</neo-eyebrow>
-                <h2>Card Component</h2>
+                <p eyebrow>Eyebrow Text</p>
+                <h3>Card Component</h3>
                 <neo-wysiwyg base="18">
                   <p>
                     Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
@@ -232,7 +232,7 @@ storiesOf('Card', module)
                       <p>
                         Body Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum. Body Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum.
                       </p>
-                      <button>Primary Action CTA</button>
+                      <neo-button color="primary">Primary Action CTA</neo-button>
                     </neo-wysiwyg>
                   </neo-col>
                 </neo-row>
@@ -261,7 +261,10 @@ storiesOf('Card', module)
                     </neo-wysiwyg>
                   </neo-col>
                   <neo-col class="neo-flex neo-align-items-center" size="4" offset="2">
-                    <button>Primary Action CTA</button>
+                    <neo-buttons>
+                      <neo-button>Primary Action CTA</neo-button>
+                      <neo-button fill="clear">Secondary Action CTA</neo-button>
+                    </neo-buttons>
                   </neo-col>
                 </neo-row>
               </neo-grid>

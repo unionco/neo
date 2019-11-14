@@ -26,6 +26,70 @@ export namespace Components {
     'toggle': () => Promise<void>;
   }
   interface NeoApp {}
+  interface NeoButton {
+    /**
+    * The type of button.
+    */
+    'buttonType': string;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the button.
+    */
+    'disabled': boolean;
+    /**
+    * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+    */
+    'download': string | undefined;
+    /**
+    * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
+    */
+    'expand'?: 'full' | 'block';
+    /**
+    * Set to `"clear"` for a transparent button, to `"outline"` for a transparent button with a border, or to `"solid"`. The default style is `"solid"` except inside of a toolbar, where the default is `"clear"`.
+    */
+    'fill'?: 'clear' | 'outline' | 'solid' | 'default';
+    /**
+    * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+    */
+    'href': string | undefined;
+    /**
+    * The mode determines which platform styles to use.
+    */
+    'mode'?: "ios" | "md";
+    /**
+    * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+    */
+    'rel': string | undefined;
+    /**
+    * The button shape.
+    */
+    'shape'?: 'round';
+    /**
+    * The button size.
+    */
+    'size'?: 'small' | 'default' | 'large';
+    /**
+    * If `true`, activates a button with a heavier font weight.
+    */
+    'strong': boolean;
+    /**
+    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+    */
+    'target': string | undefined;
+    /**
+    * The type of the button.
+    */
+    'type': 'submit' | 'reset' | 'button';
+  }
+  interface NeoButtons {
+    /**
+    * The first name
+    */
+    'layout': 'row' | 'col';
+  }
   interface NeoCard {
     /**
     * Layout of container (flex) row or column
@@ -272,6 +336,18 @@ declare global {
     new (): HTMLNeoAppElement;
   };
 
+  interface HTMLNeoButtonElement extends Components.NeoButton, HTMLStencilElement {}
+  var HTMLNeoButtonElement: {
+    prototype: HTMLNeoButtonElement;
+    new (): HTMLNeoButtonElement;
+  };
+
+  interface HTMLNeoButtonsElement extends Components.NeoButtons, HTMLStencilElement {}
+  var HTMLNeoButtonsElement: {
+    prototype: HTMLNeoButtonsElement;
+    new (): HTMLNeoButtonsElement;
+  };
+
   interface HTMLNeoCardElement extends Components.NeoCard, HTMLStencilElement {}
   var HTMLNeoCardElement: {
     prototype: HTMLNeoCardElement;
@@ -377,6 +453,8 @@ declare global {
     'neo-accordion': HTMLNeoAccordionElement;
     'neo-accordion-item': HTMLNeoAccordionItemElement;
     'neo-app': HTMLNeoAppElement;
+    'neo-button': HTMLNeoButtonElement;
+    'neo-buttons': HTMLNeoButtonsElement;
     'neo-card': HTMLNeoCardElement;
     'neo-card-content': HTMLNeoCardContentElement;
     'neo-card-header': HTMLNeoCardHeaderElement;
@@ -419,6 +497,78 @@ declare namespace LocalJSX {
     'onItemOpen'?: (event: CustomEvent<{ item: HTMLElement }>) => void;
   }
   interface NeoApp {}
+  interface NeoButton {
+    /**
+    * The type of button.
+    */
+    'buttonType'?: string;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the button.
+    */
+    'disabled'?: boolean;
+    /**
+    * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+    */
+    'download'?: string | undefined;
+    /**
+    * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
+    */
+    'expand'?: 'full' | 'block';
+    /**
+    * Set to `"clear"` for a transparent button, to `"outline"` for a transparent button with a border, or to `"solid"`. The default style is `"solid"` except inside of a toolbar, where the default is `"clear"`.
+    */
+    'fill'?: 'clear' | 'outline' | 'solid' | 'default';
+    /**
+    * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+    */
+    'href'?: string | undefined;
+    /**
+    * The mode determines which platform styles to use.
+    */
+    'mode'?: "ios" | "md";
+    /**
+    * Emitted when the button loses focus.
+    */
+    'onNeoBlur'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the button has focus.
+    */
+    'onNeoFocus'?: (event: CustomEvent<void>) => void;
+    /**
+    * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+    */
+    'rel'?: string | undefined;
+    /**
+    * The button shape.
+    */
+    'shape'?: 'round';
+    /**
+    * The button size.
+    */
+    'size'?: 'small' | 'default' | 'large';
+    /**
+    * If `true`, activates a button with a heavier font weight.
+    */
+    'strong'?: boolean;
+    /**
+    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+    */
+    'target'?: string | undefined;
+    /**
+    * The type of the button.
+    */
+    'type'?: 'submit' | 'reset' | 'button';
+  }
+  interface NeoButtons {
+    /**
+    * The first name
+    */
+    'layout'?: 'row' | 'col';
+  }
   interface NeoCard {
     /**
     * Layout of container (flex) row or column
@@ -654,6 +804,8 @@ declare namespace LocalJSX {
     'neo-accordion': NeoAccordion;
     'neo-accordion-item': NeoAccordionItem;
     'neo-app': NeoApp;
+    'neo-button': NeoButton;
+    'neo-buttons': NeoButtons;
     'neo-card': NeoCard;
     'neo-card-content': NeoCardContent;
     'neo-card-header': NeoCardHeader;
@@ -683,6 +835,8 @@ declare module "@stencil/core" {
       'neo-accordion': LocalJSX.NeoAccordion & JSXBase.HTMLAttributes<HTMLNeoAccordionElement>;
       'neo-accordion-item': LocalJSX.NeoAccordionItem & JSXBase.HTMLAttributes<HTMLNeoAccordionItemElement>;
       'neo-app': LocalJSX.NeoApp & JSXBase.HTMLAttributes<HTMLNeoAppElement>;
+      'neo-button': LocalJSX.NeoButton & JSXBase.HTMLAttributes<HTMLNeoButtonElement>;
+      'neo-buttons': LocalJSX.NeoButtons & JSXBase.HTMLAttributes<HTMLNeoButtonsElement>;
       'neo-card': LocalJSX.NeoCard & JSXBase.HTMLAttributes<HTMLNeoCardElement>;
       'neo-card-content': LocalJSX.NeoCardContent & JSXBase.HTMLAttributes<HTMLNeoCardContentElement>;
       'neo-card-header': LocalJSX.NeoCardHeader & JSXBase.HTMLAttributes<HTMLNeoCardHeaderElement>;

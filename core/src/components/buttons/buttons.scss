@@ -1,0 +1,17 @@
+:host {
+    align-items: center;
+    display: flex;
+}
+
+:host([layout="row"]) {
+    flex-direction: row;
+}
+
+:host([layout="col"]) {
+    align-items: flex-start;
+    flex-direction: column;
+
+    &::slotted(*) neo-button:not(:last-child) {
+        --margin-bottom: 8px;
+    }
+}

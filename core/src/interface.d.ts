@@ -8,3 +8,16 @@ export type ComponentTags = string;
 export type ComponentRef = Function | HTMLElement | string | null;
 export type ComponentProps<T = null> = { [key: string]: any };
 export type CssClassMap = { [className: string]: boolean };
+
+export interface AnchorInterface {
+  href: string | undefined;
+  target: string | undefined;
+  rel: string | undefined;
+  download: string | undefined;
+  // routerDirection: RouterDirection;
+}
+
+export interface ButtonInterface {
+  type: 'submit' | 'reset' | 'button';
+  disabled: boolean;
+}

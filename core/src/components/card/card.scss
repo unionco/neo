@@ -23,10 +23,6 @@
 :host(.u-row) {
     flex-direction: row;
 
-    ::slotted(neo-copy) {
-        // max-width: 350px;
-    }
-
     ::slotted(neo-img) {
         margin-right: 40px;
     }

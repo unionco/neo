@@ -44,16 +44,16 @@
   cursor: pointer;
 }
 
-:host(.ion-color) {
+:host(.neo-color) {
   background: current-color(base, .08);
   color: current-color(shade);
 }
 
-:host(.ion-color:focus) {
+:host(.neo-color:focus) {
   background: current-color(base, .12);
 }
 
-:host(.ion-color.activated) {
+:host(.neo-color.activated) {
   background: current-color(base, .16);
 }
 
