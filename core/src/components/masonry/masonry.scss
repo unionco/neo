@@ -1,6 +1,8 @@
 @import "../../theme/neo.globals";
 
 :host {
+  --masonry-max-width: 1440px;
+
   display: block;
 }
 
@@ -35,6 +37,8 @@
   display: flex;
   flex-flow: column wrap;
   height: 90vmin;
+  margin: 0 auto;
+  max-width: var(--masonry-max-width);
   text-align: center;
   text-transform: uppercase;
   width: 100%;
