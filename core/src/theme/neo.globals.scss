@@ -27,3 +27,39 @@ $screen-breakpoints: (
   lg: 992px,
   xl: 1200px
 ) !default;
+
+$sides: (top, bottom, left, right);
+$spacing-base: var(--neo-spacing-base, 1rem);
+
+$spacing: (
+  0: calc(#{$spacing-base} * 0),
+  1: calc(#{$spacing-base} * 0.25),
+  2: calc(#{$spacing-base} * 0.5),
+  3: calc(#{$spacing-base} * 0.75),
+  4: calc(#{$spacing-base} * 1),
+  5: calc(#{$spacing-base} * 1.25),
+  6: calc(#{$spacing-base} * 1.50),
+  8: calc(#{$spacing-base} * 2),
+  10: calc(#{$spacing-base} * 2.50),
+  12: calc(#{$spacing-base} * 3),
+  16: calc(#{$spacing-base} * 4),
+  20: calc(#{$spacing-base} * 5),
+  24: calc(#{$spacing-base} * 6),
+  32: calc(#{$spacing-base} * 8),
+  40: calc(#{$spacing-base} * 10),
+  48: calc(#{$spacing-base} * 12),
+  56: calc(#{$spacing-base} * 14),
+  64: calc(#{$spacing-base} * 16),
+) !default;
+
+@each $space, $value in $spacing {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$value} !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$value} !important;
+    }
+  }
+}

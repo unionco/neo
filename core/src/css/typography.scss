@@ -11,9 +11,6 @@ $rfs-unit: rem !default;
 
 // Typography
 // --------------------------------------------------
-:root {
-  // --display-font-size: rfs(7rem);
-}
 
 /// @prop - Font weight of all headings
 $base-font-size:               var(--neo-font-base, 16px) !default;
