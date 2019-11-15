@@ -1,0 +1,18 @@
+@import "../../theme/neo.globals";
+
+:host {
+    --padding-start: 24px;
+    --padding-end: var(--padding-start);
+    --padding-top: 24px;
+    --padding-bottom: var(--padding-top);
+
+    @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+}
+
+::slotted(p) {
+    margin: 0;
+}
+
+::slotted(neo-buttons) {
+    margin-top: 24px;
+}

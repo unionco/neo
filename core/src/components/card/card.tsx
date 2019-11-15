@@ -20,7 +20,7 @@ export class Card implements ComponentInterface {
   /**
    * Background image or video
    */
-  @Prop() mediabehind: boolean = false;
+  @Prop() mediabehind: 'default'|'tall';
 
   render() {
     const { layout, reverse, mediabehind } = this;
@@ -30,8 +30,9 @@ export class Card implements ComponentInterface {
         class={{
           [`u-${layout}`]: true,
           'neo-small': true,
-          'u-reverse': reverse,
-          'has-background': mediabehind,
+          'neo-reverse': reverse,
+          [`neo-${mediabehind}`]: mediabehind !== undefined,
+          'has-background': mediabehind !== undefined,
         }}>
         <slot></slot>
       </Host>

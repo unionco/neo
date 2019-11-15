@@ -98,18 +98,13 @@ export namespace Components {
     /**
     * Background image or video
     */
-    'mediabehind': boolean;
+    'mediabehind': 'default'|'tall';
     /**
     * Reverse order
     */
     'reverse': boolean;
   }
-  interface NeoCardContent {
-    /**
-    * The first name
-    */
-    'prop': string;
-  }
+  interface NeoCardContent {}
   interface NeoCardHeader {
     /**
     * The first name
@@ -577,18 +572,13 @@ declare namespace LocalJSX {
     /**
     * Background image or video
     */
-    'mediabehind'?: boolean;
+    'mediabehind'?: 'default'|'tall';
     /**
     * Reverse order
     */
     'reverse'?: boolean;
   }
-  interface NeoCardContent {
-    /**
-    * The first name
-    */
-    'prop'?: string;
-  }
+  interface NeoCardContent {}
   interface NeoCardHeader {
     /**
     * The first name

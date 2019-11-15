@@ -1,5 +1,6 @@
 :host {
     --copy-inner-padding: 0 40px 0 0;
+    --min-tall-height: 400px;
 
     display: flex;
     flex-direction: column;
@@ -13,22 +14,19 @@
     left: 16px;
 }
 
-
-:host(.u-col) {
-    ::slotted(neo-copy) {
-        padding: 24px 0;
-    }
-}
-
 :host(.u-row) {
     flex-direction: row;
+
+    ::slotted(neo-card-content) {
+        --padding-start: 0;
+    }
 
     ::slotted(neo-img) {
         margin-right: 40px;
     }
 }
 
-:host(.u-row.u-reverse) {
+:host(.u-row.neo-reverse) {
     flex-direction: row-reverse;
 
     ::slotted(neo-img) {
@@ -37,11 +35,16 @@
     }
 }
 
+:host(.neo-tall) {
+    min-height: var(--min-tall-height);
+}
+
 :host(.has-background) {
     justify-content: flex-end;
 
-    ::slotted(neo-copy) {
-        padding: 40px;
+    ::slotted(neo-card-content) {
+        --padding-start: 40px;
+        --padding-top: 40px;
         text-align: center;
     }
 
