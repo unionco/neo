@@ -53,6 +53,15 @@ $spacing: (
 ) !default;
 
 @each $space, $value in $spacing {
+
+  .m-#{$space} {
+    margin: #{$value} !important;
+  }
+
+  .p-#{$space} {
+    margin: #{$value} !important;
+  }
+
   @each $side in $sides {
     .m-#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$value} !important;
