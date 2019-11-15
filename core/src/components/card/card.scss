@@ -1,11 +1,13 @@
 :host {
     --copy-inner-padding: 0 40px 0 0;
     --min-tall-height: 400px;
+    --card-margin: 16px;
+    --card-justify-content: flex-end;
 
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 16px;
+    margin: var(--card-margin);
 }
 
 ::slotted(neo-chip) {
@@ -40,7 +42,7 @@
 }
 
 :host(.has-background) {
-    justify-content: flex-end;
+    justify-content: var(--card-justify-content);
 
     ::slotted(neo-card-content) {
         --padding-start: 40px;

@@ -1,0 +1,81 @@
+@import "../../theme/neo.globals";
+
+:host {
+  display: block;
+}
+
+:host(.neo-layout-xs) {
+  --child-one: 100%;
+  --child-two: 100%;
+}
+
+:host(.neo-layout-sm) {
+  --child-one: 100%;
+  --child-two: 50%;
+  --child-three: 50%;
+}
+
+:host(.neo-layout-md) {
+  --child-one: 30%;
+  --child-two: 70%;
+  --child-three: 70%;
+  --child-four: 30%;
+}
+
+:host(.neo-layout-lg) {
+  --child-one: 50%;
+  --child-two: 50%;
+  --child-three: 30%;
+  --child-four: 40%;
+  --child-five: 30%;
+}
+
+.masonry-inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  height: 90vmin;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+::slotted(neo-masonry-item) {
+  height: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  padding: map-get($spacing, 4);
+}
+
+::slotted(neo-masonry-item:nth-child(1)) {
+  height: var(--child-one);
+}
+
+::slotted(neo-masonry-item:nth-child(2)) {
+  height: var(--child-two);
+}
+
+::slotted(neo-masonry-item:nth-child(3)) {
+  height: var(--child-three);
+}
+
+::slotted(neo-masonry-item:nth-child(4)) {
+  height: var(--child-four);
+}
+
+::slotted(neo-masonry-item:nth-child(5)) {
+  height: var(--child-five);
+}
+
+
+@include media-breakpoint-down(md) {
+  .masonry-inner {
+    flex-flow: column nowrap;
+    height: auto;
+  }
+
+  ::slotted(neo-masonry-item) {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}

@@ -58,16 +58,36 @@ $spacing: (
     margin: #{$value} !important;
   }
 
+  .my-#{$space} {
+    margin-bottom: #{$value} !important;
+    margin-top: #{$value} !important;
+  }
+
+  .mx-#{$space} {
+    margin-left: #{$value} !important;
+    margin-right: #{$value} !important;
+  }
+
   .p-#{$space} {
     margin: #{$value} !important;
   }
 
+  .py-#{$space} {
+    padding-bottom: #{$value} !important;
+    padding-top: #{$value} !important;
+  }
+
+  .px-#{$space} {
+    padding-left: #{$value} !important;
+    padding-right: #{$value} !important;
+  }
+
   @each $side in $sides {
-    .m-#{str-slice($side, 0, 1)}-#{$space} {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$value} !important;
     }
 
-    .p-#{str-slice($side, 0, 1)}-#{$space} {
+    .p#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$value} !important;
     }
   }

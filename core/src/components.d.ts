@@ -257,6 +257,8 @@ export namespace Components {
     */
     'src'?: string;
   }
+  interface NeoMasonry {}
+  interface NeoMasonryItem {}
   interface NeoProfile {
     /**
     * Layout of container (flex) row or column
@@ -403,6 +405,18 @@ declare global {
     new (): HTMLNeoImgElement;
   };
 
+  interface HTMLNeoMasonryElement extends Components.NeoMasonry, HTMLStencilElement {}
+  var HTMLNeoMasonryElement: {
+    prototype: HTMLNeoMasonryElement;
+    new (): HTMLNeoMasonryElement;
+  };
+
+  interface HTMLNeoMasonryItemElement extends Components.NeoMasonryItem, HTMLStencilElement {}
+  var HTMLNeoMasonryItemElement: {
+    prototype: HTMLNeoMasonryItemElement;
+    new (): HTMLNeoMasonryItemElement;
+  };
+
   interface HTMLNeoProfileElement extends Components.NeoProfile, HTMLStencilElement {}
   var HTMLNeoProfileElement: {
     prototype: HTMLNeoProfileElement;
@@ -460,6 +474,8 @@ declare global {
     'neo-grid': HTMLNeoGridElement;
     'neo-heading': HTMLNeoHeadingElement;
     'neo-img': HTMLNeoImgElement;
+    'neo-masonry': HTMLNeoMasonryElement;
+    'neo-masonry-item': HTMLNeoMasonryItemElement;
     'neo-profile': HTMLNeoProfileElement;
     'neo-row': HTMLNeoRowElement;
     'neo-slide': HTMLNeoSlideElement;
@@ -743,6 +759,8 @@ declare namespace LocalJSX {
     */
     'src'?: string;
   }
+  interface NeoMasonry {}
+  interface NeoMasonryItem {}
   interface NeoProfile {
     /**
     * Layout of container (flex) row or column
@@ -806,6 +824,8 @@ declare namespace LocalJSX {
     'neo-grid': NeoGrid;
     'neo-heading': NeoHeading;
     'neo-img': NeoImg;
+    'neo-masonry': NeoMasonry;
+    'neo-masonry-item': NeoMasonryItem;
     'neo-profile': NeoProfile;
     'neo-row': NeoRow;
     'neo-slide': NeoSlide;
@@ -837,6 +857,8 @@ declare module "@stencil/core" {
       'neo-grid': LocalJSX.NeoGrid & JSXBase.HTMLAttributes<HTMLNeoGridElement>;
       'neo-heading': LocalJSX.NeoHeading & JSXBase.HTMLAttributes<HTMLNeoHeadingElement>;
       'neo-img': LocalJSX.NeoImg & JSXBase.HTMLAttributes<HTMLNeoImgElement>;
+      'neo-masonry': LocalJSX.NeoMasonry & JSXBase.HTMLAttributes<HTMLNeoMasonryElement>;
+      'neo-masonry-item': LocalJSX.NeoMasonryItem & JSXBase.HTMLAttributes<HTMLNeoMasonryItemElement>;
       'neo-profile': LocalJSX.NeoProfile & JSXBase.HTMLAttributes<HTMLNeoProfileElement>;
       'neo-row': LocalJSX.NeoRow & JSXBase.HTMLAttributes<HTMLNeoRowElement>;
       'neo-slide': LocalJSX.NeoSlide & JSXBase.HTMLAttributes<HTMLNeoSlideElement>;

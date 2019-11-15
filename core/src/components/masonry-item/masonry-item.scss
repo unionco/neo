@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+::slotted(neo-card) {
+  --card-margin: 0px;
+  --card-justify-content: center;
+
+  height: 100%;
+}

@@ -1,31 +1,13 @@
+@import "../../../node_modules/rfs/scss";
+@import "../../theme/neo.globals";
+
 .wysiwyg {
-    $multiplier: 4px;
-
-    --neo-wysiwyg-font-size: 12px;
-
-    @for $i from 1 through 12 {
-        --neo-wysiwyg-font-#{$i}: calc(#{$multiplier} * #{$i});
-    }
+    --figure-height: 350px;
 
     display: block;
-    font-size: var(--neo-wysiwyg-font-size);
-}
-
-.wysiwyg.base-14 {
-    --neo-wysiwyg-font-size: 14px;
-}
-
-.wysiwyg.base-16 {
-    --neo-wysiwyg-font-size: 16px;
-}
-
-.wysiwyg.base-18 {
-    --neo-wysiwyg-font-size: 18px;
 }
 
 .wysiwyg-native {
-    font-size: var(--neo-wysiwyg-font-size);
-
     a:not(neo-button) {
         text-decoration: underline;
 
@@ -56,32 +38,24 @@
     }
 
     h1 {
-        font-size: var(--neo-wysiwyg-font-12);
-        margin-bottom: calc(var(--neo-proximty-scale) * 5);
+        @include margin(null, null, map-get($spacing, 6));
     }
 
     h2 {
-        font-size: var(--neo-wysiwyg-font-10);
-        margin-bottom: calc(var(--neo-proximty-scale) * 4);
+        @include margin(null, null, map-get($spacing, 4));
     }
 
     h3 {
-        font-size: var(--neo-wysiwyg-font-8);
-        margin-bottom: calc(var(--neo-proximty-scale) * 3);
+        @include margin(null, null, map-get($spacing, 3));
     }
 
     h4 {
-        font-size: var(--neo-wysiwyg-font-7);
-        margin-bottom: calc(var(--neo-proximty-scale) * 2.5);
-    }
-
-    h5 {
-        font-size: var(--neo-wysiwyg-font-5);
-        margin-bottom: calc(var(--neo-proximty-scale) * 2);
+        @include margin(null, null, map-get($spacing, 2));
     }
 
     ul,
     ol {
+        @include margin(null, null, map-get($spacing, 8));
         padding-left: 40px;
     }
 
@@ -117,15 +91,45 @@
         margin: 2.5em 0;
     }
 
-    blockquote {
+    figure {
+        @include margin(0, 0, map-get($spacing, 10));
+
+        height: var(--figure-height);
+        overflow: hidden;
         padding: 0;
-        margin: 0;
-        line-height: 1;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+
+    blockquote {
+        @include font-size(24px);
+        @include margin(map-get($spacing, 8), 0);
+        @include padding(map-get($spacing, 6));
+
+        background: #eee;
+        border-left: 4px solid #262626;
+        line-height: 1.5;
         font-style: italic;
+        text-align: left;
 
         * {
             margin: 0;
             padding: 0;
+        }
+
+        span {
+            @include font-size(16px);
+
+            &:before {
+                content: '\2014';
+                margin-right: 4px;
+            }
         }
     }
 }
