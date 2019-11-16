@@ -1,0 +1,58 @@
+@import "../../theme/neo.globals";
+
+:host {
+  --nav-button-padding-start: #{map-get($spacing, 8)};
+  --nav-button-padding-end: var(--nav-button-padding-start);
+  --nav-button-padding-top: #{map-get($spacing, 4)};
+  --nav-button-padding-bottom: var(--nav-button-padding-top);
+
+  --nav-button-border-color-active: var(--neo-color-primary);
+  --nav-button-border-color: var(--neo-color-light);
+  --nav-button-border-width: 2px;
+
+  display: block;
+}
+
+.neo-tab-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.neo-tab-nav {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.neo-tab-button {
+  @include padding(var(--nav-button-padding-top), var(--nav-button-padding-end), var(--nav-button-padding-bottom), var(--nav-button-padding-start));
+
+  align-items: center;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-family: $font-family-base;
+  font-size: 16px;
+  outline: none;
+  position: relative;
+  width: auto;
+
+  &:after {
+    background: var(--nav-button-border-color);
+    top: 100%;
+    content: '';
+    height: var(--nav-button-border-width);
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &.is-open {
+    &:after {
+      background: var(--nav-button-border-color-active);
+    }
+  }
+}

@@ -286,6 +286,28 @@ export namespace Components {
     */
     'update': () => Promise<void>;
   }
+  interface NeoTab {
+    /**
+    * Should be activatble
+    */
+    'disabled': boolean;
+    /**
+    * Label used for the tab button title
+    */
+    'label': string;
+    /**
+    * Status of the tab
+    */
+    'open': boolean;
+  }
+  interface NeoTabs {
+    'currentTab': () => Promise<number>;
+    /**
+    * Layout to show tabs at top or side
+    */
+    'layout': string;
+    'openTab': (tabIndex: number) => Promise<void>;
+  }
   interface NeoVideo {
     /**
     * Show custom controls, this is not ready yet. Use native controls
@@ -441,6 +463,18 @@ declare global {
     new (): HTMLNeoSlidesElement;
   };
 
+  interface HTMLNeoTabElement extends Components.NeoTab, HTMLStencilElement {}
+  var HTMLNeoTabElement: {
+    prototype: HTMLNeoTabElement;
+    new (): HTMLNeoTabElement;
+  };
+
+  interface HTMLNeoTabsElement extends Components.NeoTabs, HTMLStencilElement {}
+  var HTMLNeoTabsElement: {
+    prototype: HTMLNeoTabsElement;
+    new (): HTMLNeoTabsElement;
+  };
+
   interface HTMLNeoVideoElement extends Components.NeoVideo, HTMLStencilElement {}
   var HTMLNeoVideoElement: {
     prototype: HTMLNeoVideoElement;
@@ -480,6 +514,8 @@ declare global {
     'neo-row': HTMLNeoRowElement;
     'neo-slide': HTMLNeoSlideElement;
     'neo-slides': HTMLNeoSlidesElement;
+    'neo-tab': HTMLNeoTabElement;
+    'neo-tabs': HTMLNeoTabsElement;
     'neo-video': HTMLNeoVideoElement;
     'neo-wysiwyg': HTMLNeoWysiwygElement;
     'scrub-bar': HTMLScrubBarElement;
@@ -780,6 +816,27 @@ declare namespace LocalJSX {
     'pager'?: boolean;
     'scrollbar'?: boolean;
   }
+  interface NeoTab {
+    /**
+    * Should be activatble
+    */
+    'disabled'?: boolean;
+    /**
+    * Label used for the tab button title
+    */
+    'label'?: string;
+    /**
+    * Status of the tab
+    */
+    'open'?: boolean;
+  }
+  interface NeoTabs {
+    /**
+    * Layout to show tabs at top or side
+    */
+    'layout'?: string;
+    'onNeoTabChange'?: (event: CustomEvent<any>) => void;
+  }
   interface NeoVideo {
     /**
     * Show custom controls, this is not ready yet. Use native controls
@@ -830,6 +887,8 @@ declare namespace LocalJSX {
     'neo-row': NeoRow;
     'neo-slide': NeoSlide;
     'neo-slides': NeoSlides;
+    'neo-tab': NeoTab;
+    'neo-tabs': NeoTabs;
     'neo-video': NeoVideo;
     'neo-wysiwyg': NeoWysiwyg;
     'scrub-bar': ScrubBar;
@@ -863,6 +922,8 @@ declare module "@stencil/core" {
       'neo-row': LocalJSX.NeoRow & JSXBase.HTMLAttributes<HTMLNeoRowElement>;
       'neo-slide': LocalJSX.NeoSlide & JSXBase.HTMLAttributes<HTMLNeoSlideElement>;
       'neo-slides': LocalJSX.NeoSlides & JSXBase.HTMLAttributes<HTMLNeoSlidesElement>;
+      'neo-tab': LocalJSX.NeoTab & JSXBase.HTMLAttributes<HTMLNeoTabElement>;
+      'neo-tabs': LocalJSX.NeoTabs & JSXBase.HTMLAttributes<HTMLNeoTabsElement>;
       'neo-video': LocalJSX.NeoVideo & JSXBase.HTMLAttributes<HTMLNeoVideoElement>;
       'neo-wysiwyg': LocalJSX.NeoWysiwyg & JSXBase.HTMLAttributes<HTMLNeoWysiwygElement>;
       'scrub-bar': LocalJSX.ScrubBar & JSXBase.HTMLAttributes<HTMLScrubBarElement>;
