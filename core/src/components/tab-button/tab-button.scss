@@ -1,0 +1,41 @@
+@import "../../theme/neo.globals";
+
+:host {
+  --padding-top: #{map-get($spacing, 4)};
+  --padding-end: #{map-get($spacing, 8)};
+  --padding-bottom: #{map-get($spacing, 4)};
+  --padding-start: #{map-get($spacing, 8)};
+
+  background: var(--background);
+  color: var(--color);
+  display: block;
+  outline: none;
+}
+
+a {
+  @include margin(0);
+  @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+  @include text-inherit();
+
+  -webkit-user-drag: none;
+  align-items: inherit;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: inherit;
+  height: 100%;
+  justify-content: inherit;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
+:host(.tab-disabled) {
+  pointer-events: none;
+
+  opacity: .4;
+}

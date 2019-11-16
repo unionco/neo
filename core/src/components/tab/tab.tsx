@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Element, Host, h, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'neo-tab',
@@ -7,10 +7,12 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class Tab {
 
+  @Element() el!: HTMLNeoTabElement;
+
   /**
    * Label used for the tab button title
    */
-  @Prop() label: string;
+  @Prop() tab!: string;
 
   /**
    * Should be activatble
@@ -20,16 +22,22 @@ export class Tab {
   /**
    * Status of the tab
    */
-  @Prop() open: boolean;
+  @Prop({ mutable: true }) active = false;
 
+  /** Set the active component for the tab */
+  @Method()
+  async setActive(): Promise<void> {
+    this.active = true;
+  }
 
   render() {
-    const { open } = this;
+    const { active } = this;
 
     return (
       <Host
+        role="tabpanel"
         class={{
-          'is-open': open
+          'tab-hidden': !active
         }}
       >
         <slot></slot>

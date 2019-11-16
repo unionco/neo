@@ -5,39 +5,23 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property | Attribute | Description                        | Type     | Default    |
-| -------- | --------- | ---------------------------------- | -------- | ---------- |
-| `layout` | `layout`  | Layout to show tabs at top or side | `string` | `'column'` |
-
-
 ## Events
 
-| Event          | Description | Type               |
-| -------------- | ----------- | ------------------ |
-| `neoTabChange` |             | `CustomEvent<any>` |
+| Event               | Description                                                                | Type                            |
+| ------------------- | -------------------------------------------------------------------------- | ------------------------------- |
+| `neoTabsDidChange`  | Emitted when the navigation has finished transitioning to a new component. | `CustomEvent<{ tab: string; }>` |
+| `neoTabsWillChange` | Emitted when the navigation is about to transition to a new component.     | `CustomEvent<{ tab: string; }>` |
 
 
 ## Methods
 
-### `currentTab() => Promise<number>`
+### `select(tab: string | HTMLNeoTabElement) => Promise<boolean>`
 
-
-
-#### Returns
-
-Type: `Promise<number>`
-
-
-
-### `openTab(tabIndex: number) => Promise<void>`
-
-
+Select a tab by the value of its `tab` property or an element reference.
 
 #### Returns
 
-Type: `Promise<void>`
+Type: `Promise<boolean>`
 
 
 

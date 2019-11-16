@@ -288,25 +288,48 @@ export namespace Components {
   }
   interface NeoTab {
     /**
+    * Status of the tab
+    */
+    'active': boolean;
+    /**
     * Should be activatble
     */
     'disabled': boolean;
     /**
+    * Set the active component for the tab
+    */
+    'setActive': () => Promise<void>;
+    /**
     * Label used for the tab button title
     */
-    'label': string;
+    'tab': string;
+  }
+  interface NeoTabBar {
     /**
-    * Status of the tab
+    * The selected tab component
     */
-    'open': boolean;
+    'selectedTab'?: string;
+  }
+  interface NeoTabButton {
+    /**
+    * If `true`, the user cannot interact with the tab button.
+    */
+    'disabled': boolean;
+    /**
+    * The selected tab component
+    */
+    'selected': boolean;
+    /**
+    * A tab id must be provided for each `neo-tab`.
+    */
+    'tab'?: string;
   }
   interface NeoTabs {
-    'currentTab': () => Promise<number>;
     /**
-    * Layout to show tabs at top or side
+    * Select a tab by the value of its `tab` property or an element reference.
+    * @param tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.
     */
-    'layout': string;
-    'openTab': (tabIndex: number) => Promise<void>;
+    'select': (tab: string | HTMLNeoTabElement) => Promise<boolean>;
   }
   interface NeoVideo {
     /**
@@ -469,6 +492,18 @@ declare global {
     new (): HTMLNeoTabElement;
   };
 
+  interface HTMLNeoTabBarElement extends Components.NeoTabBar, HTMLStencilElement {}
+  var HTMLNeoTabBarElement: {
+    prototype: HTMLNeoTabBarElement;
+    new (): HTMLNeoTabBarElement;
+  };
+
+  interface HTMLNeoTabButtonElement extends Components.NeoTabButton, HTMLStencilElement {}
+  var HTMLNeoTabButtonElement: {
+    prototype: HTMLNeoTabButtonElement;
+    new (): HTMLNeoTabButtonElement;
+  };
+
   interface HTMLNeoTabsElement extends Components.NeoTabs, HTMLStencilElement {}
   var HTMLNeoTabsElement: {
     prototype: HTMLNeoTabsElement;
@@ -515,6 +550,8 @@ declare global {
     'neo-slide': HTMLNeoSlideElement;
     'neo-slides': HTMLNeoSlidesElement;
     'neo-tab': HTMLNeoTabElement;
+    'neo-tab-bar': HTMLNeoTabBarElement;
+    'neo-tab-button': HTMLNeoTabButtonElement;
     'neo-tabs': HTMLNeoTabsElement;
     'neo-video': HTMLNeoVideoElement;
     'neo-wysiwyg': HTMLNeoWysiwygElement;
@@ -818,24 +855,47 @@ declare namespace LocalJSX {
   }
   interface NeoTab {
     /**
+    * Status of the tab
+    */
+    'active'?: boolean;
+    /**
     * Should be activatble
     */
     'disabled'?: boolean;
     /**
     * Label used for the tab button title
     */
-    'label'?: string;
+    'tab': string;
+  }
+  interface NeoTabBar {
     /**
-    * Status of the tab
+    * The selected tab component
     */
-    'open'?: boolean;
+    'selectedTab'?: string;
+  }
+  interface NeoTabButton {
+    /**
+    * If `true`, the user cannot interact with the tab button.
+    */
+    'disabled'?: boolean;
+    /**
+    * The selected tab component
+    */
+    'selected'?: boolean;
+    /**
+    * A tab id must be provided for each `neo-tab`.
+    */
+    'tab'?: string;
   }
   interface NeoTabs {
     /**
-    * Layout to show tabs at top or side
+    * Emitted when the navigation has finished transitioning to a new component.
     */
-    'layout'?: string;
-    'onNeoTabChange'?: (event: CustomEvent<any>) => void;
+    'onNeoTabsDidChange'?: (event: CustomEvent<{ tab: string }>) => void;
+    /**
+    * Emitted when the navigation is about to transition to a new component.
+    */
+    'onNeoTabsWillChange'?: (event: CustomEvent<{ tab: string }>) => void;
   }
   interface NeoVideo {
     /**
@@ -888,6 +948,8 @@ declare namespace LocalJSX {
     'neo-slide': NeoSlide;
     'neo-slides': NeoSlides;
     'neo-tab': NeoTab;
+    'neo-tab-bar': NeoTabBar;
+    'neo-tab-button': NeoTabButton;
     'neo-tabs': NeoTabs;
     'neo-video': NeoVideo;
     'neo-wysiwyg': NeoWysiwyg;
@@ -923,6 +985,8 @@ declare module "@stencil/core" {
       'neo-slide': LocalJSX.NeoSlide & JSXBase.HTMLAttributes<HTMLNeoSlideElement>;
       'neo-slides': LocalJSX.NeoSlides & JSXBase.HTMLAttributes<HTMLNeoSlidesElement>;
       'neo-tab': LocalJSX.NeoTab & JSXBase.HTMLAttributes<HTMLNeoTabElement>;
+      'neo-tab-bar': LocalJSX.NeoTabBar & JSXBase.HTMLAttributes<HTMLNeoTabBarElement>;
+      'neo-tab-button': LocalJSX.NeoTabButton & JSXBase.HTMLAttributes<HTMLNeoTabButtonElement>;
       'neo-tabs': LocalJSX.NeoTabs & JSXBase.HTMLAttributes<HTMLNeoTabsElement>;
       'neo-video': LocalJSX.NeoVideo & JSXBase.HTMLAttributes<HTMLNeoVideoElement>;
       'neo-wysiwyg': LocalJSX.NeoWysiwyg & JSXBase.HTMLAttributes<HTMLNeoWysiwygElement>;
