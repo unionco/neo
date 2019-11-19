@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+:host(.up-1) {
+  --gallery-height: 550px;
+  --gallery-width: 100%;
+}
+
+:host(.up-2) {
+  --gallery-height: 550px;
+  --gallery-width: 50%;
+}
+
+:host(.up-3) {
+  --gallery-height: 375px;
+  --gallery-width: 33%;
+}
+
+:host(.up-4) {
+  --gallery-height: 275px;
+  --gallery-width: 25%;
+}
+
+.gallery-inner {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+::slotted(neo-gallery-item) {
+  height: var(--gallery-height);
+  width: var(--gallery-width);
+}

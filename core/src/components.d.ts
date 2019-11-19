@@ -235,6 +235,8 @@ export namespace Components {
     */
     'upper': boolean;
   }
+  interface NeoGallery {}
+  interface NeoGalleryItem {}
   interface NeoGrid {
     /**
     * If `true`, the grid will have a fixed width based on the screen size.
@@ -306,11 +308,19 @@ export namespace Components {
   }
   interface NeoTabBar {
     /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
     * The selected tab component
     */
     'selectedTab'?: string;
   }
   interface NeoTabButton {
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
     /**
     * If `true`, the user cannot interact with the tab button.
     */
@@ -432,6 +442,18 @@ declare global {
     new (): HTMLNeoEyebrowElement;
   };
 
+  interface HTMLNeoGalleryElement extends Components.NeoGallery, HTMLStencilElement {}
+  var HTMLNeoGalleryElement: {
+    prototype: HTMLNeoGalleryElement;
+    new (): HTMLNeoGalleryElement;
+  };
+
+  interface HTMLNeoGalleryItemElement extends Components.NeoGalleryItem, HTMLStencilElement {}
+  var HTMLNeoGalleryItemElement: {
+    prototype: HTMLNeoGalleryItemElement;
+    new (): HTMLNeoGalleryItemElement;
+  };
+
   interface HTMLNeoGridElement extends Components.NeoGrid, HTMLStencilElement {}
   var HTMLNeoGridElement: {
     prototype: HTMLNeoGridElement;
@@ -540,6 +562,8 @@ declare global {
     'neo-col': HTMLNeoColElement;
     'neo-copy': HTMLNeoCopyElement;
     'neo-eyebrow': HTMLNeoEyebrowElement;
+    'neo-gallery': HTMLNeoGalleryElement;
+    'neo-gallery-item': HTMLNeoGalleryItemElement;
     'neo-grid': HTMLNeoGridElement;
     'neo-heading': HTMLNeoHeadingElement;
     'neo-img': HTMLNeoImgElement;
@@ -798,6 +822,8 @@ declare namespace LocalJSX {
     */
     'upper'?: boolean;
   }
+  interface NeoGallery {}
+  interface NeoGalleryItem {}
   interface NeoGrid {
     /**
     * If `true`, the grid will have a fixed width based on the screen size.
@@ -869,11 +895,19 @@ declare namespace LocalJSX {
   }
   interface NeoTabBar {
     /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
     * The selected tab component
     */
     'selectedTab'?: string;
   }
   interface NeoTabButton {
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
     /**
     * If `true`, the user cannot interact with the tab button.
     */
@@ -938,6 +972,8 @@ declare namespace LocalJSX {
     'neo-col': NeoCol;
     'neo-copy': NeoCopy;
     'neo-eyebrow': NeoEyebrow;
+    'neo-gallery': NeoGallery;
+    'neo-gallery-item': NeoGalleryItem;
     'neo-grid': NeoGrid;
     'neo-heading': NeoHeading;
     'neo-img': NeoImg;
@@ -975,6 +1011,8 @@ declare module "@stencil/core" {
       'neo-col': LocalJSX.NeoCol & JSXBase.HTMLAttributes<HTMLNeoColElement>;
       'neo-copy': LocalJSX.NeoCopy & JSXBase.HTMLAttributes<HTMLNeoCopyElement>;
       'neo-eyebrow': LocalJSX.NeoEyebrow & JSXBase.HTMLAttributes<HTMLNeoEyebrowElement>;
+      'neo-gallery': LocalJSX.NeoGallery & JSXBase.HTMLAttributes<HTMLNeoGalleryElement>;
+      'neo-gallery-item': LocalJSX.NeoGalleryItem & JSXBase.HTMLAttributes<HTMLNeoGalleryItemElement>;
       'neo-grid': LocalJSX.NeoGrid & JSXBase.HTMLAttributes<HTMLNeoGridElement>;
       'neo-heading': LocalJSX.NeoHeading & JSXBase.HTMLAttributes<HTMLNeoHeadingElement>;
       'neo-img': LocalJSX.NeoImg & JSXBase.HTMLAttributes<HTMLNeoImgElement>;

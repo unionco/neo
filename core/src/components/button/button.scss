@@ -16,7 +16,7 @@ $button-round-padding-start:      $button-round-padding-end !default;
 $button-round-border-radius:      64px !default;
 
 /// @prop - Border radius of a default button
-$button-border-radius:            4px !default;
+$button-border-radius:            0px !default;
 
 /// @prop - Padding top of the default button
 $button-padding-top:              8px !default;
@@ -49,10 +49,16 @@ $button-border-width:             1px !default;
 $button-border-style:             solid !default;
 
 /// @prop - Height of the button
-$button-height:                   2.8em !default;
+$button-height:                   64px !default;
+
+/// @prop - Min Width of the button
+$button-min-width:                auto !default;
 
 /// @prop - Font size of the button text
 $button-font-size:                16px !default;
+
+/// @prop - Font weight of the button text
+$button-font-weight:              500 !default;
 
 /// @prop - Font size of the button text
 $button-opacity-hover:            .8 !default;
@@ -111,12 +117,14 @@ $button-clear-opacity-hover:      .6 !default;
   display: inline-block;
 
   height: $button-height;
+  min-width: $button-min-width;
   width: auto;
 
   color: var(--color);
 
   font-family: $font-family-base;
   font-size: $button-font-size;
+  font-weight: $button-font-weight;
 
   text-align: center;
   text-decoration: none;

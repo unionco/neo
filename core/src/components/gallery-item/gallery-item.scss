@@ -1,0 +1,11 @@
+@import "../../theme/neo.globals";
+
+:host {
+  display: block;
+  padding: map-get($spacing, 4);
+  height: 100%;
+}
+
+::slotted(neo-img) {
+  height: 100%;
+}

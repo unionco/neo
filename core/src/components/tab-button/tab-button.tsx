@@ -1,4 +1,6 @@
 import { Component, Host, h, Element, Event, Listen, EventEmitter, Prop } from '@stencil/core';
+import { Color } from '../../interface';
+import { createColorClasses } from '../../utils/theme';
 
 @Component({
   tag: 'neo-tab-button',
@@ -8,6 +10,13 @@ import { Component, Host, h, Element, Event, Listen, EventEmitter, Prop } from '
 export class TabButton {
 
   @Element() el!: HTMLElement;
+
+  /**
+   * The color to use from your application's color palette.
+   * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
+   * For more information on colors, see [theming](/docs/theming/basics).
+   */
+  @Prop() color?: Color;
 
   /**
    * If `true`, the user cannot interact with the tab button.
@@ -70,7 +79,7 @@ export class TabButton {
   }
 
   render() {
-    const { disabled, tabIndex, selected, tab } = this;
+    const { color, disabled, tabIndex, selected, tab } = this;
 
     return (
       <Host
@@ -81,6 +90,8 @@ export class TabButton {
         aria-selected={selected ? 'true' : null}
         id={tab !== undefined ? `tab-button-${tab}` : null}
         class={{
+          ...createColorClasses(color),
+          'tab': true,
           'tab-selected': selected,
           'tab-disabled': disabled,
           'neo-activatable': true,
