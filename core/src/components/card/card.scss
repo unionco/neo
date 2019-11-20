@@ -1,13 +1,44 @@
 :host {
-    --copy-inner-padding: 0 40px 0 0;
-    --min-tall-height: 400px;
+    --card-padding: 0px;
     --card-margin: 16px;
     --card-justify-content: flex-end;
+    --card-flex-direction: column;
+    --card-min-tall-height: auto;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: var(--card-flex-direction);
     position: relative;
     margin: var(--card-margin);
+}
+
+::slotted(neo-img[slot="background"]) {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+::slotted(neo-video[slot="background"]) {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -2;
+
+    video {
+        height: auto;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+    }
 }
 
 ::slotted(neo-chip) {
@@ -17,64 +48,31 @@
 }
 
 :host(.u-row) {
-    flex-direction: row;
-
-    ::slotted(neo-card-content) {
-        --padding-start: 0;
-    }
-
-    ::slotted(neo-img) {
-        margin-right: 40px;
-    }
-}
-
-:host(.u-row.neo-reverse) {
-    flex-direction: row-reverse;
-
-    ::slotted(neo-img) {
-        margin-left: 40px;
-        margin-right: 0px;
-    }
+    --card-flex-direction: row;
 }
 
 :host(.neo-tall) {
-    min-height: var(--min-tall-height);
+    --card-min-tall-height: 400px;
 }
 
 :host(.has-background) {
+    --card-justify-content: flex-start;
     justify-content: var(--card-justify-content);
 
     ::slotted(neo-card-content) {
-        --padding-start: 40px;
-        --padding-top: 40px;
+        margin-top: auto;
         text-align: center;
     }
+}
 
-    ::slotted(neo-img) {
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        z-index: -1;
-    }
+:host(.has-background) {
+    --card-padding: 40px;
+}
 
-    ::slotted(neo-video) {
-        bottom: 0;
-        left: 0;
-        overflow: hidden;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: -2;
-
-        video {
-            height: auto;
-            left: 50%;
-            min-height: 100%;
-            min-width: 100%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
-        }
-    }
+.card-inner {
+    display: flex;
+    flex-direction: var(--card-flex-direction);
+    justify-content: var(--card-justify-content);
+    min-height: var(--card-min-tall-height);
+    padding: var(--card-padding);
 }

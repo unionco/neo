@@ -6,7 +6,7 @@ storiesOf('Masonry', module)
       <neo-masonry>
         <neo-masonry-item>
           <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -17,7 +17,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -34,7 +34,7 @@ storiesOf('Masonry', module)
       <neo-masonry>
         <neo-masonry-item>
           <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -45,7 +45,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -56,7 +56,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -73,7 +73,7 @@ storiesOf('Masonry', module)
       <neo-masonry>
         <neo-masonry-item>
           <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -84,7 +84,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -95,7 +95,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -106,7 +106,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -123,7 +123,7 @@ storiesOf('Masonry', module)
       <neo-masonry>
         <neo-masonry-item>
           <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -134,7 +134,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -145,7 +145,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -156,7 +156,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>
@@ -167,7 +167,7 @@ storiesOf('Masonry', module)
         </neo-masonry-item>
         <neo-masonry-item>
             <neo-card mediabehind>
-            <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
             <neo-card-content>
               <h3>Card Component</h3>
               <p>

@@ -6,16 +6,648 @@
   <title>Neo Components</title>
   <script type="module" src="/build/neo.esm.js"></script>
   <script nomodule src="/build/neo.js"></script>
+
+  <link rel="stylesheet" href="/build/css/core.css" />
+  <link rel="stylesheet" href="/build/css/normalize.css" />
+  <link rel="stylesheet" href="/build/css/structure.css" />
+  <link rel="stylesheet" href="/build/css/typography.css" />
+  <link rel="stylesheet" href="/build/css/padding.css" />
+  <link rel="stylesheet" href="/build/css/text-alignment.css" />
+  <link rel="stylesheet" href="/build/css/text-transformation.css" />
+  <link rel="stylesheet" href="/build/css/flex-utils.css" />
+  <link rel="stylesheet" href="/build/css/display.css" />
+
+  <style>
+    #root {
+      box-sizing: border-box;
+      margin: 6%;
+    }
+
+    #root * {
+      box-sizing: border-box !important;
+    }
+
+    #root *:before,
+    #root *:after {
+      box-sizing: inherit;
+    }
+
+    :root {
+      --neo-default-font: "Helvetica Neue", "Roboto", sans-serif;
+      --neo-font-family: var(--neo-default-font);
+      --neo-font-base: 16px;
+      --neo-font-bold-weight: 700;
+      --neo-font-normal-weight: 400;
+      --neo-font-light-weight: 200;
+      --neo-content-scale: 1;
+
+      --neo-proximty-scale: 4px;
+      --neo-stretch-scale: 8px;
+
+      --neo-color-primary: #3880ff;
+      --neo-color-primary-rgb: 56,128,255;
+      --neo-color-primary-contrast: #ffffff;
+      --neo-color-primary-contrast-rgb: 255,255,255;
+      --neo-color-primary-shade: #3171e0;
+      --neo-color-primary-tint: #4c8dff;
+
+      --neo-color-secondary: #0cd1e8;
+      --neo-color-secondary-rgb: 12,209,232;
+      --neo-color-secondary-contrast: #000000;
+      --neo-color-secondary-contrast-rgb: 0,0,0;
+      --neo-color-secondary-shade: #0bb8cc;
+      --neo-color-secondary-tint: #24d6ea;
+
+      --neo-color-tertiary: #7044ff;
+      --neo-color-tertiary-rgb: 112,68,255;
+      --neo-color-tertiary-contrast: #ffffff;
+      --neo-color-tertiary-contrast-rgb: 255,255,255;
+      --neo-color-tertiary-shade: #633ce0;
+      --neo-color-tertiary-tint: #7e57ff;
+
+      --neo-color-success: #10dc60;
+      --neo-color-success-rgb: 16,220,96;
+      --neo-color-success-contrast: #ffffff;
+      --neo-color-success-contrast-rgb: 255,255,255;
+      --neo-color-success-shade: #0ec254;
+      --neo-color-success-tint: #28e070;
+
+      --neo-color-warning: #ffce00;
+      --neo-color-warning-rgb: 255,206,0;
+      --neo-color-warning-contrast: #ffffff;
+      --neo-color-warning-contrast-rgb: 255,255,255;
+      --neo-color-warning-shade: #e0b500;
+      --neo-color-warning-tint: #ffd31a;
+
+      --neo-color-danger: #f04141;
+      --neo-color-danger-rgb: 245,61,61;
+      --neo-color-danger-contrast: #ffffff;
+      --neo-color-danger-contrast-rgb: 255,255,255;
+      --neo-color-danger-shade: #d33939;
+      --neo-color-danger-tint: #f25454;
+
+      --neo-color-dark: #222428;
+      --neo-color-dark-rgb: 34,34,34;
+      --neo-color-dark-contrast: #ffffff;
+      --neo-color-dark-contrast-rgb: 255,255,255;
+      --neo-color-dark-shade: #1e2023;
+      --neo-color-dark-tint: #383a3e;
+
+      --neo-color-medium: #989aa2;
+      --neo-color-medium-rgb: 152,154,162;
+      --neo-color-medium-contrast: #ffffff;
+      --neo-color-medium-contrast-rgb: 255,255,255;
+      --neo-color-medium-shade: #86888f;
+      --neo-color-medium-tint: #a2a4ab;
+
+      --neo-color-light: #f4f5f8;
+      --neo-color-light-rgb: 244,244,244;
+      --neo-color-light-contrast: #000000;
+      --neo-color-light-contrast-rgb: 0,0,0;
+      --neo-color-light-shade: #d7d8da;
+      --neo-color-light-tint: #f5f6f9;
+    }
+    html {
+      margin: 0;
+    }
+
+    section {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
+  <section>
+    <h2>Tag: neo-accordion & neo-accordion-item</h2>
+    <p>Basic accordion with auto close items</p>
+    <style>
+      neo-accordion-item h3 {
+        margin: 0;
+      }
+    </style>
+    <neo-accordion close-others="true">
+      <neo-accordion-item>
+        <div slot="trigger">
+          <h3>Test</h3>
+        </div>
+        <div slot="content">
+          <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
+        </div>
+      </neo-accordion-item>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+      <neo-accordion-item>
+        <div slot="trigger">
+          <h3>Test</h3>
+        </div>
+        <div slot="content">
+          <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus.</p>
+        </div>
+      </neo-accordion-item>
 
-  <neo-slides pager>
-    <neo-slide>slide one</neo-slide>
-    <neo-slide>slide two</neo-slide>
-    <neo-slide>slide three</neo-slide>
-  </neo-slides>
+      <neo-accordion-item>
+        <div slot="trigger">
+          <h3>Test</h3>
+        </div>
+        <div slot="content">
+          <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla
+            porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
+          <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla
+            porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
+          <p>Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Nulla
+            porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
+        </div>
+      </neo-accordion-item>
+    </neo-accordion>
+  </section>
+  <section>
+    <h2>Tag: neo-card & neo-card-content</h2>
+    <neo-grid>
+      <neo-row>
+        <neo-col size="12" size-md="4">
+          <neo-card>
+            <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <p eyebrow>Eyebrow Text</p>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card>
+            <neo-img slot="end" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <p eyebrow>Eyebrow Text</p>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card>
+            <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <p eyebrow>Eyebrow Text</p>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+    <neo-grid>
+      <neo-row>
+        <neo-col size="12" size-md="4">
+          <neo-card mediabehind>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card mediabehind>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card mediabehind>
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+      </neo-row>
+      <hr/>
+      <neo-row>
+        <neo-col size="12" size-md="4">
+          <neo-card mediabehind="tall">
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card mediabehind="tall">
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card mediabehind="tall">
+            <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+    <neo-grid>
+      <neo-row>
+        <neo-col size="12" size-md="4">
+          <neo-card>
+            <neo-chip>Featured</neo-chip>
+            <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
+            <neo-card-content>
+              <neo-grid no-padding>
+                <neo-row>
+                  <neo-col size="6" no-padding>
+                    <p eyebrow>Eyebrow Text</p>
+                  </neo-col>
+                  <neo-col class="neo-flex neo-justify-content-end" size="6" no-padding>
+                    <span>$39</span>
+                  </neo-col>
+                </neo-row>
+              </neo-grid>
+              <h3>Product Card</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+              <neo-buttons>
+                <neo-button color="primary">Primary</neo-button>
+                <neo-button color="primary" fill="clear">Secondary</neo-button>
+              </neo-buttons>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card>
+            <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
+            <neo-card-content>
+              <neo-grid no-padding>
+                <neo-row>
+                  <neo-col size="6" no-padding>
+                    <p eyebrow>Eyebrow Text</p>
+                  </neo-col>
+                  <neo-col class="neo-flex neo-justify-content-end" size="6" no-padding>
+                    <span>$39</span>
+                  </neo-col>
+                </neo-row>
+              </neo-grid>
+              <h3>Product Card</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+              <neo-buttons>
+                <neo-button color="primary">Primary</neo-button>
+                <neo-button color="primary" fill="clear">Secondary</neo-button>
+              </neo-buttons>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+        <neo-col size="12" size-md="4">
+          <neo-card>
+            <neo-chip color="primary">Featured</neo-chip>
+            <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
+            <neo-card-content>
+              <neo-grid no-padding>
+                <neo-row>
+                  <neo-col size="6" no-padding>
+                    <p eyebrow>Eyebrow Text</p>
+                  </neo-col>
+                  <neo-col class="neo-flex neo-justify-content-end" size="6" no-padding>
+                    <span>$39</span>
+                  </neo-col>
+                </neo-row>
+              </neo-grid>
+              <h3>Product Card</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+              <neo-buttons>
+                <neo-button color="primary">Primary</neo-button>
+                <neo-button color="primary" fill="clear">Secondary</neo-button>
+              </neo-buttons>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+    <neo-grid>
+      <neo-row>
+        <neo-col size="8">
+          <neo-card layout="row">
+            <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <p eyebrow>Eyebrow Text</p>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+      </neo-row>
+      <br />
+      <neo-row>
+        <neo-col size="8">
+          <neo-card layout="row">
+            <neo-img slot="end" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card-content>
+              <p eyebrow>Eyebrow Text</p>
+              <h3>Card Component</h3>
+              <p>
+                Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+              </p>
+            </neo-card-content>
+          </neo-card>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+    <neo-grid class="neo-small">
+      <neo-row>
+        <neo-col size="6">
+          <h2 no-margin>Definition Card</h2>
+        </neo-col>
+        <neo-col size="6">
+          <neo-wysiwyg>
+            <p>
+              Body Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum. Body
+              Copy of up to three lines. Maecenas faucibus mollis interdum. Donec sed odio duimollis interdum.
+            </p>
+            <neo-button color="primary">Primary Action CTA</neo-button>
+          </neo-wysiwyg>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+  </section>
+  <section>
+    <h2>Tag: neo-gallery & neo-gallery-item</h2>
+    <neo-gallery>
+      <neo-gallery-item>
+        <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+      </neo-gallery-item>
+      <neo-gallery-item>
+        <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+      </neo-gallery-item>
+      <neo-gallery-item>
+        <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+      </neo-gallery-item>
+      <neo-gallery-item>
+        <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+      </neo-gallery-item>
+    </neo-gallery>
+  </section>
+  <section>
+    <h2>Tag: neo-masonry & neo-masonry-item</h2>
+    <neo-masonry>
+      <neo-masonry-item>
+        <neo-card mediabehind>
+          <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+          <neo-card-content>
+            <h3>Card Component</h3>
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+            </p>
+          </neo-card-content>
+        </neo-card>
+      </neo-masonry-item>
+      <neo-masonry-item>
+        <neo-card mediabehind style="justify-content: center;">
+          <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+          <neo-card-content>
+            <h3>Card Component</h3>
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+            </p>
+          </neo-card-content>
+        </neo-card>
+      </neo-masonry-item>
+      <neo-masonry-item>
+        <neo-card mediabehind style="justify-content: center;">
+          <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+          <neo-card-content>
+            <h3>Card Component</h3>
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+            </p>
+          </neo-card-content>
+        </neo-card>
+      </neo-masonry-item>
+      <neo-masonry-item>
+        <neo-card mediabehind>
+          <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
+          <neo-card-content>
+            <h3>Card Component</h3>
+            <p>
+              Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac censectetur ac.
+            </p>
+          </neo-card-content>
+        </neo-card>
+      </neo-masonry-item>
+    </neo-masonry>
+  </section>
+  <section>
+    <h2>Tag: neo-slides & neo-slide</h2>
+    <p>Carousel that leverage the <a href="https://swiperjs.com" target="_blank">Swiper</a> slider library</p>
+    <style>
+      neo-slide {
+        max-width: 70%;
+      }
+    </style>
+    <neo-slides pager buttons
+      opts='{"centeredSlides": true, "slidesPerView": "auto", "initialSlide": 1, "spaceBetween": 20, "loop": true}'>
+      <neo-slide>slide one</neo-slide>
+      <neo-slide>slide two</neo-slide>
+      <neo-slide>slide three</neo-slide>
+      <neo-slide>slide four</neo-slide>
+      <neo-slide>slide five</neo-slide>
+      <neo-slide>slide six</neo-slide>
+    </neo-slides>
+  </section>
+  <section>
+    <h2>Tag: neo-tabs, neo-tab-bar, neo-tab-button</h2>
+    <p>Tabbed component to show hide tab panels</p>
 
+    <neo-grid>
+      <neo-row>
+        <neo-col size="8">
+          <neo-tabs>
+            <neo-tab-bar color="primary" slot="top">
+              <neo-tab-button tab="tab1">Tab 1</neo-tab-button>
+              <neo-tab-button tab="tab2" selected>Tab 2</neo-tab-button>
+              <neo-tab-button tab="tab3" disabled>Tab 3</neo-tab-button>
+            </neo-tab-bar>
+
+            <neo-tab tab="tab1">
+              <neo-wysiwyg>
+                <h2>Short headline 1</h2>
+                <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in,
+                  egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                  massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+                <h3>Medium length title</h3>
+                <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in,
+                  egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                  massa justo sit amet risus.</p>
+                <neo-button>Button</neo-button>
+                <p>
+                  <figure>
+                    <img src="https://placehold.it/250x250.png" alt="article image" />
+                  </figure>
+                </p>
+              </neo-wysiwyg>
+            </neo-tab>
+            <neo-tab tab="tab2">
+              <neo-wysiwyg>
+                <h2>Short headline 2</h2>
+                <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in,
+                  egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                  massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+                <h3>Medium length title</h3>
+                <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in,
+                  egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                  massa justo sit amet risus.</p>
+                <p>
+                  <figure>
+                    <img src="https://placehold.it/250x250.png" alt="article image" />
+                  </figure>
+                </p>
+              </neo-wysiwyg>
+            </neo-tab>
+            <neo-tab tab="tab3">
+              <neo-wysiwyg>
+                <h2>Short headline 3</h2>
+                <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in,
+                  egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                  massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+                <h3>Medium length title</h3>
+                <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                  Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in,
+                  egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                  massa justo sit amet risus.</p>
+                <p>
+                  <figure>
+                    <img src="https://placehold.it/250x250.png" alt="article image" />
+                  </figure>
+                </p>
+              </neo-wysiwyg>
+            </neo-tab>
+          </neo-tabs>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+  </section>
+  <section>
+    <h2>Tag: neo-wysiwyg</h2>
+    <neo-grid>
+      <neo-row>
+        <neo-col size="6" offset="3">
+          <neo-wysiwyg>
+            <h2>Short headline</h2>
+            <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Morbi
+              leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+              amet risus. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+            <h3>Medium length title</h3>
+            <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Morbi
+              leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+              amet risus.</p>
+            <p>
+              <figure>
+                <img src="https://placehold.it/250x250.png" alt="article image" />
+              </figure>
+            </p>
+
+            <h4>Medium length headline</h4>
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Morbi
+              leo risus, porta ac consectetur ac, vestibulum at eros.
+            </p>
+
+            <ul>
+              <li>Cras justo odio, dapibus ac facilisis in</li>
+              <li>Egestas eget quam</li>
+              <li>Fusce dapibus, tellus ac cursus commodo, tortor mauris</li>
+              <li>Nibh, ut fermentum massa justo sit amet risus </li>
+            </ul>
+
+            <h4>Medium length headline</h4>
+            <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Morbi
+              leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+            <blockquote>
+              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <span>John Smith</span>
+            </blockquote>
+
+            <neo-grid no-padding>
+              <neo-row>
+                <neo-col size="6">
+                  <h4>Medium length headline</h4>
+                  <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                  <neo-button no-padding fill="clear">Click Me</neo-button>
+                </neo-col>
+                <neo-col text-right size="6">
+                  <img src="https://placehold.it/250x250.png" alt="article image" />
+                </neo-col>
+              </neo-row>
+            </neo-grid>
+
+            <h4>Medium length headline</h4>
+            <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Morbi
+              leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+            <neo-grid no-padding>
+              <neo-row>
+                <neo-col size="6">
+                  <img src="https://placehold.it/250x250.png" alt="article image" />
+                </neo-col>
+                <neo-col size="6">
+                  <h4>Medium length headline</h4>
+                  <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                  <neo-button no-padding fill="clear">Click Me</neo-button>
+                </neo-col>
+              </neo-row>
+            </neo-grid>
+          </neo-wysiwyg>
+        </neo-col>
+      </neo-row>
+    </neo-grid>
+  </section>
 </body>
 </html>

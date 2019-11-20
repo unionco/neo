@@ -13,28 +13,27 @@ export class Card implements ComponentInterface {
   @Prop() layout: 'col' | 'row' = 'col';
 
   /**
-   * Reverse order
-   */
-  @Prop() reverse: boolean = false;
-
-  /**
    * Background image or video
    */
   @Prop() mediabehind: 'default'|'tall';
 
   render() {
-    const { layout, reverse, mediabehind } = this;
+    const { layout, mediabehind } = this;
 
     return (
       <Host
         class={{
           [`u-${layout}`]: true,
           'neo-small': true,
-          'neo-reverse': reverse,
           [`neo-${mediabehind}`]: mediabehind !== undefined,
           'has-background': mediabehind !== undefined,
         }}>
-        <slot></slot>
+        <div class="card-inner">
+          <slot name="background"></slot>
+          <slot name="start"></slot>
+          <slot></slot>
+          <slot name="end"></slot>
+        </div>
       </Host>
     );
   }

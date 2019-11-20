@@ -1,24 +1,30 @@
+@import "../../theme/neo.globals";
+
 :host {
+  --gallery-large-height: 550px;
+  --gallery-medium-height: 375px;
+  --gallery-small-height: 275px;
+
   display: block;
 }
 
 :host(.up-1) {
-  --gallery-height: 550px;
+  --gallery-height: var(--gallery-large-height);
   --gallery-width: 100%;
 }
 
 :host(.up-2) {
-  --gallery-height: 550px;
+  --gallery-height: var(--gallery-large-height);
   --gallery-width: 50%;
 }
 
 :host(.up-3) {
-  --gallery-height: 375px;
+  --gallery-height: var(--gallery-medium-height);
   --gallery-width: 33%;
 }
 
 :host(.up-4) {
-  --gallery-height: 275px;
+  --gallery-height: var(--gallery-small-height);
   --gallery-width: 25%;
 }
 
@@ -32,4 +38,11 @@
 ::slotted(neo-gallery-item) {
   height: var(--gallery-height);
   width: var(--gallery-width);
+}
+
+@include media-breakpoint-down(md) {
+  ::slotted(neo-gallery-item) {
+    max-width: 100%;
+    min-width: 100%;
+  }
 }

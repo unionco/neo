@@ -7,7 +7,7 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <p eyebrow>Eyebrow Text</p>
                 <h3>Card Component</h3>
@@ -19,7 +19,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <p eyebrow>Eyebrow Text</p>
                 <h3>Card Component</h3>
@@ -31,7 +31,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <p eyebrow>Eyebrow Text</p>
                 <h3>Card Component</h3>
@@ -51,7 +51,7 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <h3>Card Component</h3>
                 <p>
@@ -62,7 +62,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <h3>Card Component</h3>
                 <p>
@@ -73,7 +73,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <h3>Card Component</h3>
                 <p>
@@ -86,7 +86,7 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind="tall">
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <h3>Card Component</h3>
                 <p>
@@ -97,7 +97,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind="tall">
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <h3>Card Component</h3>
                 <p>
@@ -108,7 +108,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card mediabehind="tall">
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="background" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <h3>Card Component</h3>
                 <p>
@@ -128,7 +128,7 @@ storiesOf('Card', module)
           <neo-col size="12" size-md="4">
             <neo-card>
               <neo-chip>Featured</neo-chip>
-              <neo-img src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
               <neo-card-content>
                 <neo-grid no-padding>
                   <neo-row>
@@ -153,7 +153,7 @@ storiesOf('Card', module)
           </neo-col>
           <neo-col size="12" size-md="4">
             <neo-card>
-              <neo-img src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
               <neo-card-content>
                 <neo-grid no-padding>
                   <neo-row>
@@ -179,7 +179,7 @@ storiesOf('Card', module)
           <neo-col size="12" size-md="4">
             <neo-card>
               <neo-chip color="primary">Featured</neo-chip>
-              <neo-img src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image" alt="product"></neo-img>
               <neo-card-content>
                 <neo-grid no-padding>
                   <neo-row>
@@ -211,8 +211,8 @@ storiesOf('Card', module)
       <neo-grid>
         <neo-row>
           <neo-col size="6">
-            <neo-card layout="row" reverse>
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+            <neo-card layout="row">
+              <neo-img slot="start" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <p eyebrow>Eyebrow Text</p>
                 <h3>Card Component</h3>
@@ -227,7 +227,7 @@ storiesOf('Card', module)
         <neo-row>
           <neo-col size="6">
             <neo-card layout="row">
-              <neo-img src="https://placehold.it/345x200.png?text=Image"></neo-img>
+              <neo-img slot="end" src="https://placehold.it/345x200.png?text=Image"></neo-img>
               <neo-card-content>
                 <p eyebrow>Eyebrow Text</p>
                 <h3>Card Component</h3>
@@ -257,5 +257,6 @@ storiesOf('Card', module)
             </neo-wysiwyg>
           </neo-col>
         </neo-row>
+      </neo-grid>
     `;
   });

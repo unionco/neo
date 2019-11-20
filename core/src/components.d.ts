@@ -99,10 +99,6 @@ export namespace Components {
     * Background image or video
     */
     'mediabehind': 'default'|'tall';
-    /**
-    * Reverse order
-    */
-    'reverse': boolean;
   }
   interface NeoCardContent {}
   interface NeoCardHeader {
@@ -686,10 +682,6 @@ declare namespace LocalJSX {
     * Background image or video
     */
     'mediabehind'?: 'default'|'tall';
-    /**
-    * Reverse order
-    */
-    'reverse'?: boolean;
   }
   interface NeoCardContent {}
   interface NeoCardHeader {
