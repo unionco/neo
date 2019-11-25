@@ -14,6 +14,14 @@
 | `outline`   | `outline`   | Display an outline style button.                                                                                                                                                                                                                                       | `boolean` | `false`     |
 
 
+## CSS Custom Properties
+
+| Name           | Description            |
+| -------------- | ---------------------- |
+| `--background` | Background of the chip |
+| `--color`      | Color of the chip      |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
