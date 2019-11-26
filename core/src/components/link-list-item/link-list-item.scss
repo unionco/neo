@@ -1,0 +1,34 @@
+@import "../../theme/neo.globals";
+
+:host {
+  display: block;
+  height: 4rem;
+//   border-top: 2px solid $dark;
+//   &:first-of-type {
+//       border-top: none;
+//   }
+
+  div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+  }
+  a {
+    color: $dark;
+    text-decoration: none;
+  }
+}
+
+:host(.hover) {
+  div:hover {
+    transform: scale(1.8);
+    transform-origin: left;
+    a {
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../theme/neo.globals';
+:host {
+  display: block;
+}
+
+::slotted(neo-link-list-item) {
+  border-top: 2px solid $dark;
+}
+
+::slotted(neo-link-list-item:first-of-type) {
+  border-top: none;
+}

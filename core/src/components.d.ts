@@ -255,6 +255,11 @@ export namespace Components {
     */
     'src'?: string;
   }
+  interface NeoLinkList {}
+  interface NeoLinkListItem {
+    'hover': boolean;
+    'href': string;
+  }
   interface NeoMasonry {}
   interface NeoMasonryItem {}
   interface NeoProfile {
@@ -468,6 +473,18 @@ declare global {
     new (): HTMLNeoImgElement;
   };
 
+  interface HTMLNeoLinkListElement extends Components.NeoLinkList, HTMLStencilElement {}
+  var HTMLNeoLinkListElement: {
+    prototype: HTMLNeoLinkListElement;
+    new (): HTMLNeoLinkListElement;
+  };
+
+  interface HTMLNeoLinkListItemElement extends Components.NeoLinkListItem, HTMLStencilElement {}
+  var HTMLNeoLinkListItemElement: {
+    prototype: HTMLNeoLinkListItemElement;
+    new (): HTMLNeoLinkListItemElement;
+  };
+
   interface HTMLNeoMasonryElement extends Components.NeoMasonry, HTMLStencilElement {}
   var HTMLNeoMasonryElement: {
     prototype: HTMLNeoMasonryElement;
@@ -563,6 +580,8 @@ declare global {
     'neo-grid': HTMLNeoGridElement;
     'neo-heading': HTMLNeoHeadingElement;
     'neo-img': HTMLNeoImgElement;
+    'neo-link-list': HTMLNeoLinkListElement;
+    'neo-link-list-item': HTMLNeoLinkListItemElement;
     'neo-masonry': HTMLNeoMasonryElement;
     'neo-masonry-item': HTMLNeoMasonryItemElement;
     'neo-profile': HTMLNeoProfileElement;
@@ -850,6 +869,11 @@ declare namespace LocalJSX {
     */
     'src'?: string;
   }
+  interface NeoLinkList {}
+  interface NeoLinkListItem {
+    'hover'?: boolean;
+    'href'?: string;
+  }
   interface NeoMasonry {}
   interface NeoMasonryItem {}
   interface NeoProfile {
@@ -969,6 +993,8 @@ declare namespace LocalJSX {
     'neo-grid': NeoGrid;
     'neo-heading': NeoHeading;
     'neo-img': NeoImg;
+    'neo-link-list': NeoLinkList;
+    'neo-link-list-item': NeoLinkListItem;
     'neo-masonry': NeoMasonry;
     'neo-masonry-item': NeoMasonryItem;
     'neo-profile': NeoProfile;
@@ -1008,6 +1034,8 @@ declare module "@stencil/core" {
       'neo-grid': LocalJSX.NeoGrid & JSXBase.HTMLAttributes<HTMLNeoGridElement>;
       'neo-heading': LocalJSX.NeoHeading & JSXBase.HTMLAttributes<HTMLNeoHeadingElement>;
       'neo-img': LocalJSX.NeoImg & JSXBase.HTMLAttributes<HTMLNeoImgElement>;
+      'neo-link-list': LocalJSX.NeoLinkList & JSXBase.HTMLAttributes<HTMLNeoLinkListElement>;
+      'neo-link-list-item': LocalJSX.NeoLinkListItem & JSXBase.HTMLAttributes<HTMLNeoLinkListItemElement>;
       'neo-masonry': LocalJSX.NeoMasonry & JSXBase.HTMLAttributes<HTMLNeoMasonryElement>;
       'neo-masonry-item': LocalJSX.NeoMasonryItem & JSXBase.HTMLAttributes<HTMLNeoMasonryItemElement>;
       'neo-profile': LocalJSX.NeoProfile & JSXBase.HTMLAttributes<HTMLNeoProfileElement>;

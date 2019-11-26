@@ -29,7 +29,7 @@ export class AccordionItem {
   }
 
   @Listen('resize', { target: 'window' })
-  onWindowResive() {
+  onWindowResize() {
     this.itemHeight = this.panel.scrollHeight;
   }
 
