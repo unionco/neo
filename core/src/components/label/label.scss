@@ -1,0 +1,91 @@
+@import "../../theme/neo.globals";
+
+
+// Label
+// --------------------------------------------------
+
+:host-context(.form-group) {
+  /**
+   * @prop --color: Color of the label
+   */
+  --color: initial;
+
+  box-sizing: border-box;
+  color: var(--color);
+  display: block;
+  font-family: $font-family-base;
+  font-size: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host(.neo-color) {
+  color: current-color(base);
+}
+
+:host(.neo-text-wrap),
+:host([text-wrap]) {
+  white-space: normal;
+}
+
+:host-context(.form-group-interactive-disabled:not(.form-group-multiple-inputs)) {
+  cursor: default;
+  opacity: .3;
+  pointer-events: none;
+}
+
+:host-context(.form-group-input) {
+  flex: initial;
+  margin-right: 10px;
+  max-width: 200px;
+  pointer-events: none;
+}
+
+:host-context(.form-group-textarea) {
+  align-self: baseline;
+}
+
+:host-context(.form-group-has-focus).label-floating,
+:host-context(.form-group-has-placeholder).label-floating,
+:host-context(.form-group-has-value).label-floating {
+  @include transform(translate3d(0, 0, 0), scale(.8));
+}
+
+
+// Fixed Inputs
+// --------------------------------------------------
+
+:host(.label-fixed) {
+  flex: 0 0 100px;
+  max-width: 200px;
+  min-width: 100px;
+  width: 100px;
+}
+
+// Stacked & Floating Inputs
+// --------------------------------------------------
+
+:host(.label-stacked),
+:host(.label-floating) {
+  @include margin(null, null, 0, null);
+  align-self: stretch;
+  max-width: 100%;
+  width: auto;
+}
+
+:host(.label-floating) {
+    --floating-padding-start: 25px;
+
+    padding-left: var(--floating-padding-start);
+}
+
+:host(.label-floating) {
+    @include transform(translate3d(0, 35px, 0));
+    transform-origin: left top;
+    transition: transform .15s ease-in-out;
+}
+
+:host(.label-no-animate.label-floating) {
+  transition: none;
+}

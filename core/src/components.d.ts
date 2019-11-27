@@ -9,6 +9,9 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   Color,
+  InputChangeEventDetail,
+  StyleEventDetail,
+  TextFieldTypes,
 } from './interface';
 
 export namespace Components {
@@ -231,6 +234,7 @@ export namespace Components {
     */
     'upper': boolean;
   }
+  interface NeoFormGroup {}
   interface NeoGallery {}
   interface NeoGalleryItem {}
   interface NeoGrid {
@@ -254,6 +258,130 @@ export namespace Components {
     * The image URL. This attribute is mandatory for the `<img>` element.
     */
     'src'?: string;
+  }
+  interface NeoInput {
+    /**
+    * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
+    */
+    'accept'?: string;
+    /**
+    * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
+    */
+    'autocapitalize': string;
+    /**
+    * Indicates whether the value of the control can be automatically completed by the browser.
+    */
+    'autocomplete': 'on' | 'off';
+    /**
+    * Whether auto correction should be enabled when the user is entering/editing the text value.
+    */
+    'autocorrect': 'on' | 'off';
+    /**
+    * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+    */
+    'autofocus': boolean;
+    /**
+    * If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.
+    */
+    'clearInput': boolean;
+    /**
+    * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
+    */
+    'clearOnEdit'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * Set the amount of time, in milliseconds, to wait to trigger the `neoChange` event after each keystroke.
+    */
+    'debounce': number;
+    /**
+    * If `true`, the user cannot interact with the input.
+    */
+    'disabled': boolean;
+    /**
+    * Returns the native `<input>` element used under the hood.
+    */
+    'getInputElement': () => Promise<HTMLInputElement>;
+    /**
+    * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
+    */
+    'inputmode'?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+    /**
+    * The maximum value, which must not be less than its minimum (min attribute) value.
+    */
+    'max'?: string;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
+    */
+    'maxlength'?: number;
+    /**
+    * The minimum value, which must not be greater than its maximum (max attribute) value.
+    */
+    'min'?: string;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
+    */
+    'minlength'?: number;
+    /**
+    * If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"` or `"file"`, otherwise it is ignored.
+    */
+    'multiple'?: boolean;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name': string;
+    /**
+    * A regular expression that the value is checked against. The pattern must match the entire value, not just some subset. Use the title attribute to describe the pattern to help the user. This attribute applies when the value of the type attribute is `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
+    */
+    'pattern'?: string;
+    /**
+    * Instructional text that shows before the input has a value.
+    */
+    'placeholder'?: string | null;
+    /**
+    * If `true`, the user cannot modify the value.
+    */
+    'readonly': boolean;
+    /**
+    * If `true`, the user must fill in a value before submitting a form.
+    */
+    'required': boolean;
+    /**
+    * Sets focus on the specified `neo-input`. Use this method instead of the global `input.focus()`.
+    */
+    'setFocus': () => Promise<void>;
+    /**
+    * The initial size of the control. This value is in pixels unless the value of the type attribute is `"text"` or `"password"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
+    */
+    'size'?: number;
+    /**
+    * If `true`, the element will have its spelling and grammar checked.
+    */
+    'spellcheck': boolean;
+    /**
+    * Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number.
+    */
+    'step'?: string;
+    /**
+    * The type of control to display. The default type is text.
+    */
+    'type': TextFieldTypes;
+    /**
+    * The value of the input.
+    */
+    'value'?: string | null;
+  }
+  interface NeoLabel {
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * The position determines where and how the label behaves inside an item.
+    */
+    'position'?: 'fixed' | 'stacked' | 'floating';
   }
   interface NeoLinkList {}
   interface NeoLinkListItem {
@@ -443,6 +571,12 @@ declare global {
     new (): HTMLNeoEyebrowElement;
   };
 
+  interface HTMLNeoFormGroupElement extends Components.NeoFormGroup, HTMLStencilElement {}
+  var HTMLNeoFormGroupElement: {
+    prototype: HTMLNeoFormGroupElement;
+    new (): HTMLNeoFormGroupElement;
+  };
+
   interface HTMLNeoGalleryElement extends Components.NeoGallery, HTMLStencilElement {}
   var HTMLNeoGalleryElement: {
     prototype: HTMLNeoGalleryElement;
@@ -471,6 +605,18 @@ declare global {
   var HTMLNeoImgElement: {
     prototype: HTMLNeoImgElement;
     new (): HTMLNeoImgElement;
+  };
+
+  interface HTMLNeoInputElement extends Components.NeoInput, HTMLStencilElement {}
+  var HTMLNeoInputElement: {
+    prototype: HTMLNeoInputElement;
+    new (): HTMLNeoInputElement;
+  };
+
+  interface HTMLNeoLabelElement extends Components.NeoLabel, HTMLStencilElement {}
+  var HTMLNeoLabelElement: {
+    prototype: HTMLNeoLabelElement;
+    new (): HTMLNeoLabelElement;
   };
 
   interface HTMLNeoLinkListElement extends Components.NeoLinkList, HTMLStencilElement {}
@@ -575,11 +721,14 @@ declare global {
     'neo-col': HTMLNeoColElement;
     'neo-copy': HTMLNeoCopyElement;
     'neo-eyebrow': HTMLNeoEyebrowElement;
+    'neo-form-group': HTMLNeoFormGroupElement;
     'neo-gallery': HTMLNeoGalleryElement;
     'neo-gallery-item': HTMLNeoGalleryItemElement;
     'neo-grid': HTMLNeoGridElement;
     'neo-heading': HTMLNeoHeadingElement;
     'neo-img': HTMLNeoImgElement;
+    'neo-input': HTMLNeoInputElement;
+    'neo-label': HTMLNeoLabelElement;
     'neo-link-list': HTMLNeoLinkListElement;
     'neo-link-list-item': HTMLNeoLinkListItemElement;
     'neo-masonry': HTMLNeoMasonryElement;
@@ -833,6 +982,7 @@ declare namespace LocalJSX {
     */
     'upper'?: boolean;
   }
+  interface NeoFormGroup {}
   interface NeoGallery {}
   interface NeoGalleryItem {}
   interface NeoGrid {
@@ -868,6 +1018,138 @@ declare namespace LocalJSX {
     * The image URL. This attribute is mandatory for the `<img>` element.
     */
     'src'?: string;
+  }
+  interface NeoInput {
+    /**
+    * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
+    */
+    'accept'?: string;
+    /**
+    * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
+    */
+    'autocapitalize'?: string;
+    /**
+    * Indicates whether the value of the control can be automatically completed by the browser.
+    */
+    'autocomplete'?: 'on' | 'off';
+    /**
+    * Whether auto correction should be enabled when the user is entering/editing the text value.
+    */
+    'autocorrect'?: 'on' | 'off';
+    /**
+    * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+    */
+    'autofocus'?: boolean;
+    /**
+    * If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.
+    */
+    'clearInput'?: boolean;
+    /**
+    * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
+    */
+    'clearOnEdit'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * Set the amount of time, in milliseconds, to wait to trigger the `neoChange` event after each keystroke.
+    */
+    'debounce'?: number;
+    /**
+    * If `true`, the user cannot interact with the input.
+    */
+    'disabled'?: boolean;
+    /**
+    * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
+    */
+    'inputmode'?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+    /**
+    * The maximum value, which must not be less than its minimum (min attribute) value.
+    */
+    'max'?: string;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
+    */
+    'maxlength'?: number;
+    /**
+    * The minimum value, which must not be greater than its maximum (max attribute) value.
+    */
+    'min'?: string;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
+    */
+    'minlength'?: number;
+    /**
+    * If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"` or `"file"`, otherwise it is ignored.
+    */
+    'multiple'?: boolean;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name'?: string;
+    /**
+    * Emitted when the input loses focus.
+    */
+    'onNeoBlur'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the value has changed.
+    */
+    'onNeoChange'?: (event: CustomEvent<InputChangeEventDetail>) => void;
+    /**
+    * Emitted when the input has focus.
+    */
+    'onNeoFocus'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when a keyboard input occurred.
+    */
+    'onNeoInput'?: (event: CustomEvent<KeyboardEvent>) => void;
+    /**
+    * A regular expression that the value is checked against. The pattern must match the entire value, not just some subset. Use the title attribute to describe the pattern to help the user. This attribute applies when the value of the type attribute is `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
+    */
+    'pattern'?: string;
+    /**
+    * Instructional text that shows before the input has a value.
+    */
+    'placeholder'?: string | null;
+    /**
+    * If `true`, the user cannot modify the value.
+    */
+    'readonly'?: boolean;
+    /**
+    * If `true`, the user must fill in a value before submitting a form.
+    */
+    'required'?: boolean;
+    /**
+    * The initial size of the control. This value is in pixels unless the value of the type attribute is `"text"` or `"password"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
+    */
+    'size'?: number;
+    /**
+    * If `true`, the element will have its spelling and grammar checked.
+    */
+    'spellcheck'?: boolean;
+    /**
+    * Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number.
+    */
+    'step'?: string;
+    /**
+    * The type of control to display. The default type is text.
+    */
+    'type'?: TextFieldTypes;
+    /**
+    * The value of the input.
+    */
+    'value'?: string | null;
+  }
+  interface NeoLabel {
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * The position determines where and how the label behaves inside an item.
+    */
+    'position'?: 'fixed' | 'stacked' | 'floating';
   }
   interface NeoLinkList {}
   interface NeoLinkListItem {
@@ -988,11 +1270,14 @@ declare namespace LocalJSX {
     'neo-col': NeoCol;
     'neo-copy': NeoCopy;
     'neo-eyebrow': NeoEyebrow;
+    'neo-form-group': NeoFormGroup;
     'neo-gallery': NeoGallery;
     'neo-gallery-item': NeoGalleryItem;
     'neo-grid': NeoGrid;
     'neo-heading': NeoHeading;
     'neo-img': NeoImg;
+    'neo-input': NeoInput;
+    'neo-label': NeoLabel;
     'neo-link-list': NeoLinkList;
     'neo-link-list-item': NeoLinkListItem;
     'neo-masonry': NeoMasonry;
@@ -1029,11 +1314,14 @@ declare module "@stencil/core" {
       'neo-col': LocalJSX.NeoCol & JSXBase.HTMLAttributes<HTMLNeoColElement>;
       'neo-copy': LocalJSX.NeoCopy & JSXBase.HTMLAttributes<HTMLNeoCopyElement>;
       'neo-eyebrow': LocalJSX.NeoEyebrow & JSXBase.HTMLAttributes<HTMLNeoEyebrowElement>;
+      'neo-form-group': LocalJSX.NeoFormGroup & JSXBase.HTMLAttributes<HTMLNeoFormGroupElement>;
       'neo-gallery': LocalJSX.NeoGallery & JSXBase.HTMLAttributes<HTMLNeoGalleryElement>;
       'neo-gallery-item': LocalJSX.NeoGalleryItem & JSXBase.HTMLAttributes<HTMLNeoGalleryItemElement>;
       'neo-grid': LocalJSX.NeoGrid & JSXBase.HTMLAttributes<HTMLNeoGridElement>;
       'neo-heading': LocalJSX.NeoHeading & JSXBase.HTMLAttributes<HTMLNeoHeadingElement>;
       'neo-img': LocalJSX.NeoImg & JSXBase.HTMLAttributes<HTMLNeoImgElement>;
+      'neo-input': LocalJSX.NeoInput & JSXBase.HTMLAttributes<HTMLNeoInputElement>;
+      'neo-label': LocalJSX.NeoLabel & JSXBase.HTMLAttributes<HTMLNeoLabelElement>;
       'neo-link-list': LocalJSX.NeoLinkList & JSXBase.HTMLAttributes<HTMLNeoLinkListElement>;
       'neo-link-list-item': LocalJSX.NeoLinkListItem & JSXBase.HTMLAttributes<HTMLNeoLinkListItemElement>;
       'neo-masonry': LocalJSX.NeoMasonry & JSXBase.HTMLAttributes<HTMLNeoMasonryElement>;

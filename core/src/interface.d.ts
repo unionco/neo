@@ -21,3 +21,11 @@ export interface ButtonInterface {
   type: 'submit' | 'reset' | 'button';
   disabled: boolean;
 }
+
+export interface StyleEventDetail {
+  [styleName: string]: boolean;
+}
+
+export interface InputChangeEventDetail {
+  value: string | undefined | null;
+}
