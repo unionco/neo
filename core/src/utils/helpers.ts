@@ -23,3 +23,11 @@ export const debounce = (func: (...args: any[]) => void, wait = 0) => {
     timer = setTimeout(func, wait, ...args);
   };
 };
+
+export const findFormGroupLabel = (componentEl: HTMLElement) => {
+  const itemEl = componentEl.closest('neo-form-group');
+  if (itemEl) {
+    return itemEl.querySelector('neo-label');
+  }
+  return null;
+};

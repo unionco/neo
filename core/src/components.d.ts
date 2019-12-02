@@ -11,6 +11,7 @@ import {
   Color,
   InputChangeEventDetail,
   StyleEventDetail,
+  TextareaChangeEventDetail,
   TextFieldTypes,
 } from './interface';
 
@@ -470,6 +471,96 @@ export namespace Components {
     */
     'select': (tab: string | HTMLNeoTabElement) => Promise<boolean>;
   }
+  interface NeoTextarea {
+    /**
+    * If `true`, the element height will increase based on the value.
+    */
+    'autoGrow': boolean;
+    /**
+    * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
+    */
+    'autocapitalize': string;
+    /**
+    * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+    */
+    'autofocus': boolean;
+    /**
+    * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
+    */
+    'clearOnEdit': boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer.
+    */
+    'cols'?: number;
+    /**
+    * Set the amount of time, in milliseconds, to wait to trigger the `neoChange` event after each keystroke.
+    */
+    'debounce': number;
+    /**
+    * If `true`, the user cannot interact with the textarea.
+    */
+    'disabled': boolean;
+    /**
+    * Returns the native `<textarea>` element used under the hood.
+    */
+    'getInputElement': () => Promise<HTMLTextAreaElement>;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
+    */
+    'maxlength'?: number;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
+    */
+    'minlength'?: number;
+    /**
+    * The mode determines which platform styles to use.
+    */
+    'mode'?: "ios" | "md";
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name': string;
+    /**
+    * Instructional text that shows before the input has a value.
+    */
+    'placeholder'?: string | null;
+    /**
+    * If `true`, the user cannot modify the value.
+    */
+    'readonly': boolean;
+    /**
+    * If `true`, the user must fill in a value before submitting a form.
+    */
+    'required': boolean;
+    /**
+    * If `true`, the element will be resizeable.
+    */
+    'resize': boolean;
+    /**
+    * The number of visible text lines for the control.
+    */
+    'rows'?: number;
+    /**
+    * Sets focus on the specified `neo-textarea`. Use this method instead of the global `input.focus()`.
+    */
+    'setFocus': () => Promise<void>;
+    /**
+    * If `true`, the element will have its spelling and grammar checked.
+    */
+    'spellcheck': boolean;
+    /**
+    * The value of the textarea.
+    */
+    'value'?: string | null;
+    /**
+    * Indicates how the control wraps text.
+    */
+    'wrap'?: 'hard' | 'soft' | 'off';
+  }
   interface NeoVideo {
     /**
     * Show custom controls, this is not ready yet. Use native controls
@@ -691,6 +782,12 @@ declare global {
     new (): HTMLNeoTabsElement;
   };
 
+  interface HTMLNeoTextareaElement extends Components.NeoTextarea, HTMLStencilElement {}
+  var HTMLNeoTextareaElement: {
+    prototype: HTMLNeoTextareaElement;
+    new (): HTMLNeoTextareaElement;
+  };
+
   interface HTMLNeoVideoElement extends Components.NeoVideo, HTMLStencilElement {}
   var HTMLNeoVideoElement: {
     prototype: HTMLNeoVideoElement;
@@ -741,6 +838,7 @@ declare global {
     'neo-tab-bar': HTMLNeoTabBarElement;
     'neo-tab-button': HTMLNeoTabButtonElement;
     'neo-tabs': HTMLNeoTabsElement;
+    'neo-textarea': HTMLNeoTextareaElement;
     'neo-video': HTMLNeoVideoElement;
     'neo-wysiwyg': HTMLNeoWysiwygElement;
     'scrub-bar': HTMLScrubBarElement;
@@ -1229,6 +1327,104 @@ declare namespace LocalJSX {
     */
     'onNeoTabsWillChange'?: (event: CustomEvent<{ tab: string }>) => void;
   }
+  interface NeoTextarea {
+    /**
+    * If `true`, the element height will increase based on the value.
+    */
+    'autoGrow'?: boolean;
+    /**
+    * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
+    */
+    'autocapitalize'?: string;
+    /**
+    * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+    */
+    'autofocus'?: boolean;
+    /**
+    * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
+    */
+    'clearOnEdit'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer.
+    */
+    'cols'?: number;
+    /**
+    * Set the amount of time, in milliseconds, to wait to trigger the `neoChange` event after each keystroke.
+    */
+    'debounce'?: number;
+    /**
+    * If `true`, the user cannot interact with the textarea.
+    */
+    'disabled'?: boolean;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
+    */
+    'maxlength'?: number;
+    /**
+    * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
+    */
+    'minlength'?: number;
+    /**
+    * The mode determines which platform styles to use.
+    */
+    'mode'?: "ios" | "md";
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name'?: string;
+    /**
+    * Emitted when the input loses focus.
+    */
+    'onNeoBlur'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the input value has changed.
+    */
+    'onNeoChange'?: (event: CustomEvent<TextareaChangeEventDetail>) => void;
+    /**
+    * Emitted when the input has focus.
+    */
+    'onNeoFocus'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when a keyboard input occurred.
+    */
+    'onNeoInput'?: (event: CustomEvent<KeyboardEvent>) => void;
+    /**
+    * Instructional text that shows before the input has a value.
+    */
+    'placeholder'?: string | null;
+    /**
+    * If `true`, the user cannot modify the value.
+    */
+    'readonly'?: boolean;
+    /**
+    * If `true`, the user must fill in a value before submitting a form.
+    */
+    'required'?: boolean;
+    /**
+    * If `true`, the element will be resizeable.
+    */
+    'resize'?: boolean;
+    /**
+    * The number of visible text lines for the control.
+    */
+    'rows'?: number;
+    /**
+    * If `true`, the element will have its spelling and grammar checked.
+    */
+    'spellcheck'?: boolean;
+    /**
+    * The value of the textarea.
+    */
+    'value'?: string | null;
+    /**
+    * Indicates how the control wraps text.
+    */
+    'wrap'?: 'hard' | 'soft' | 'off';
+  }
   interface NeoVideo {
     /**
     * Show custom controls, this is not ready yet. Use native controls
@@ -1290,6 +1486,7 @@ declare namespace LocalJSX {
     'neo-tab-bar': NeoTabBar;
     'neo-tab-button': NeoTabButton;
     'neo-tabs': NeoTabs;
+    'neo-textarea': NeoTextarea;
     'neo-video': NeoVideo;
     'neo-wysiwyg': NeoWysiwyg;
     'scrub-bar': ScrubBar;
@@ -1334,6 +1531,7 @@ declare module "@stencil/core" {
       'neo-tab-bar': LocalJSX.NeoTabBar & JSXBase.HTMLAttributes<HTMLNeoTabBarElement>;
       'neo-tab-button': LocalJSX.NeoTabButton & JSXBase.HTMLAttributes<HTMLNeoTabButtonElement>;
       'neo-tabs': LocalJSX.NeoTabs & JSXBase.HTMLAttributes<HTMLNeoTabsElement>;
+      'neo-textarea': LocalJSX.NeoTextarea & JSXBase.HTMLAttributes<HTMLNeoTextareaElement>;
       'neo-video': LocalJSX.NeoVideo & JSXBase.HTMLAttributes<HTMLNeoVideoElement>;
       'neo-wysiwyg': LocalJSX.NeoWysiwyg & JSXBase.HTMLAttributes<HTMLNeoWysiwygElement>;
       'scrub-bar': LocalJSX.ScrubBar & JSXBase.HTMLAttributes<HTMLScrubBarElement>;

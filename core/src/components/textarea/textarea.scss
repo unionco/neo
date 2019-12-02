@@ -1,0 +1,115 @@
+@import "../../theme/neo.globals";
+
+// Textarea
+// --------------------------------------------------
+
+:host {
+    /**
+     * @prop --background: Background of the textarea
+     *
+     * @prop --border-radius: Border radius of the textarea
+     *
+     * @prop --color: Color of the text
+     *
+     * @prop --placeholder-color: Color of the placeholder text
+     * @prop --placeholder-font-style: Style of the placeholder text
+     * @prop --placeholder-font-weight: Weight of the placeholder text
+     * @prop --placeholder-opacity: Opacity of the placeholder text
+     *
+     * @prop --padding-top: Top padding of the textarea
+     * @prop --padding-end: Right padding if direction is left-to-right, and left padding if direction is right-to-left of the textarea
+     * @prop --padding-bottom: Bottom padding of the textarea
+     * @prop --padding-start: Left padding if direction is left-to-right, and right padding if direction is right-to-left of the textarea
+     */
+    --background: rgba(0,0,0,0.05);
+    --color: initial;
+    --placeholder-color: initial;
+    --placeholder-font-style: initial;
+    --placeholder-font-weight: initial;
+    --placeholder-opacity: .5;
+    --padding-top: 20px;
+    --padding-end: 25px;
+    --padding-bottom: 20px;
+    --padding-start: 25px;
+    --border-radius: 0;
+  
+    background: var(--background);
+    box-sizing: border-box;
+    color: var(--color);
+    display: block;
+    font-family: $font-family-base;
+    flex: 1;
+    position: relative;
+    white-space: pre-wrap;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  :host(.neo-color) {
+    background: initial;
+  }
+  
+  :host(.neo-color) {
+    color: current-color(base);
+  }
+
+  :host(.has-resize) {
+    .native-textarea {
+        resize: auto;
+    }
+  }
+  
+  // Textarea Within An Item
+  // --------------------------------------------------
+  
+  :host-context(neo-form-group) {
+    align-self: baseline;
+  }
+  
+  // Native Textarea
+  // --------------------------------------------------
+  
+  .native-textarea {
+    @include border-radius(var(--border-radius));
+    @include margin(0);
+    @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+    @include text-inherit();
+  
+    appearance: none;
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    outline: none;
+    resize: none;
+    width: 100%;
+
+    &::placeholder {
+      @include padding(0);
+  
+      color: var(--placeholder-color);
+      font-family: inherit;
+      font-style: var(--placeholder-font-style);
+      font-weight: var(--placeholder-font-weight);
+      opacity: var(--placeholder-opacity);
+    }
+  }
+  
+  .native-textarea[disabled] {
+    opacity: .4;
+  }
+  
+  // Input Cover: Unfocused
+  // --------------------------------------------------
+  // The input cover is the div that actually receives the
+  // tap/click event when scroll assist is configured to true.
+  // This make it so the native input element is not clickable.
+  // This will only show when the scroll assist is configured
+  // otherwise the .input-cover will not be rendered at all
+  // The input cover is not clickable when the input is disabled
+  .cloned-input {
+    pointer-events: none;
+    position: absolute;  
+  }

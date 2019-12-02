@@ -1,6 +1,6 @@
 import { Build, Component, ComponentInterface, Element, Event, EventEmitter, Host, Method, Prop, State, Watch, h } from '@stencil/core';
 import { Color, InputChangeEventDetail, StyleEventDetail, TextFieldTypes } from '../../interface';
-import { debounceEvent } from '../../utils/helpers';
+import { debounceEvent, findFormGroupLabel } from '../../utils/helpers';
 import { createColorClasses } from '../../utils/theme';
 
 @Component({
@@ -338,10 +338,11 @@ export class Input implements ComponentInterface {
   render() {
     const value = this.getValue();
     const labelId = this.inputId + '-lbl';
-    // const label = findItemLabel(this.el);
-    // if (label) {
-    //   label.id = labelId;
-    // }
+    const label = findFormGroupLabel(this.el);
+
+    if (label) {
+      label.id = labelId;
+    }
 
     return (
       <Host

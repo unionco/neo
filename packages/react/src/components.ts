@@ -39,6 +39,7 @@ export const NeoTab = createReactComponent<JSX.NeoTab, HTMLNeoTabElement>('neo-t
 export const NeoTabBar = createReactComponent<JSX.NeoTabBar, HTMLNeoTabBarElement>('neo-tab-bar');
 export const NeoTabButton = createReactComponent<JSX.NeoTabButton, HTMLNeoTabButtonElement>('neo-tab-button');
 export const NeoTabs = createReactComponent<JSX.NeoTabs, HTMLNeoTabsElement>('neo-tabs');
+export const NeoTextarea = createReactComponent<JSX.NeoTextarea, HTMLNeoTextareaElement>('neo-textarea');
 export const NeoVideo = createReactComponent<JSX.NeoVideo, HTMLNeoVideoElement>('neo-video');
 export const NeoWysiwyg = createReactComponent<JSX.NeoWysiwyg, HTMLNeoWysiwygElement>('neo-wysiwyg');
 export const ScrubBar = createReactComponent<JSX.ScrubBar, HTMLScrubBarElement>('scrub-bar');

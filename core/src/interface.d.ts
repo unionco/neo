@@ -29,3 +29,7 @@ export interface StyleEventDetail {
 export interface InputChangeEventDetail {
   value: string | undefined | null;
 }
+
+export interface TextareaChangeEventDetail {
+  value: string | undefined | null;
+}
