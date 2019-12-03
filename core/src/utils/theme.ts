@@ -1,5 +1,9 @@
 import { Color, CssClassMap } from "../interface";
 
+export const hostContext = (selector: string, el: HTMLElement): boolean => {
+  return el.closest(selector) !== null;
+};
+
 /**
  * Create the mode and color classes for the component based on the classes passed in
  */

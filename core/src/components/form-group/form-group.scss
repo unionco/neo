@@ -86,6 +86,70 @@
   text-decoration: none;
 }
 
+// Item: Color
+// --------------------------------------------------
+
+:host(.neo-color) .form-group-native {
+  background: current-color(base);
+  color: current-color(contrast);
+}
+
+:host(.neo-color) .form-group-native,
+:host(.neo-color) .form-group-inner {
+  border-color: current-color(shade);
+}
+
+// Item: Focused
+// --------------------------------------------------
+
+:host(.neo-focused) .form-group-native {
+  background: var(--background-focused);
+  color: var(--color-focused);
+}
+
+:host(.neo-color.neo-focused) .form-group-native {
+  background: current-color(shade);
+  color: current-color(contrast);
+}
+
+
+// Item: Hover
+// --------------------------------------------------
+
+@media (any-hover: hover) {
+  :host(.neo-activatable:hover) .form-group-native {
+    background: var(--background-hover);
+    color: var(--color-hover);
+  }
+
+  :host(.neo-color.neo-activatable:hover) .form-group-native {
+    background: #{current-color(tint)};
+    color: #{current-color(contrast)};
+  }
+}
+
+
+// Item: Activated
+// --------------------------------------------------
+
+:host(.activated) .form-group-native {
+  background: var(--background-activated);
+  color: var(--color-activated);
+}
+
+// Item: Disabled
+// --------------------------------------------------
+
+:host(.form-group-interactive-disabled:not(.form-group-multiple-inputs)) {
+  cursor: default;
+  pointer-events: none;
+}
+
+:host(.form-group-disabled) {
+  cursor: default;
+  opacity: .3;
+  pointer-events: none;
+}
 
 // Native Item
 // --------------------------------------------------
@@ -120,6 +184,12 @@
 
 .form-group-native::-moz-focus-inner {
   border: 0;
+}
+
+button, a {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 // Inner Item

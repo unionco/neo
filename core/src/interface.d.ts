@@ -33,3 +33,8 @@ export interface InputChangeEventDetail {
 export interface TextareaChangeEventDetail {
   value: string | undefined | null;
 }
+
+export interface CheckboxChangeEventDetail {
+  value: any;
+  checked: boolean;
+}

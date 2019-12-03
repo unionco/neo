@@ -8,6 +8,7 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
+  CheckboxChangeEventDetail,
   Color,
   InputChangeEventDetail,
   StyleEventDetail,
@@ -110,6 +111,36 @@ export namespace Components {
     * The first name
     */
     'prop': string;
+  }
+  interface NeoCheckbox {
+    /**
+    * If `true`, the checkbox is selected.
+    */
+    'checked': boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the checkbox.
+    */
+    'disabled': boolean;
+    /**
+    * If `true`, the checkbox will visually appear as indeterminate.
+    */
+    'indeterminate': boolean;
+    /**
+    * The mode determines which platform styles to use.
+    */
+    'mode'?: "ios" | "md";
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name': string;
+    /**
+    * The value of the toggle does not mean if it's checked or not, use the `checked` property for that.  The value of a toggle is analogous to the value of a `<input type="checkbox">`, it's only used when the toggle participates in a native `<form>`.
+    */
+    'value': string;
   }
   interface NeoChip {
     /**
@@ -235,7 +266,24 @@ export namespace Components {
     */
     'upper': boolean;
   }
-  interface NeoFormGroup {}
+  interface NeoFormGroup {
+    /**
+    * If `true`, a button tag will be rendered and the item will be tappable.
+    */
+    'button': boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the item.
+    */
+    'disabled': boolean;
+    /**
+    * The type of the button. Only used when an `onclick` or `button` property is present.
+    */
+    'type': 'submit' | 'reset' | 'button';
+  }
   interface NeoGallery {}
   interface NeoGalleryItem {}
   interface NeoGrid {
@@ -638,6 +686,12 @@ declare global {
     new (): HTMLNeoCardHeaderElement;
   };
 
+  interface HTMLNeoCheckboxElement extends Components.NeoCheckbox, HTMLStencilElement {}
+  var HTMLNeoCheckboxElement: {
+    prototype: HTMLNeoCheckboxElement;
+    new (): HTMLNeoCheckboxElement;
+  };
+
   interface HTMLNeoChipElement extends Components.NeoChip, HTMLStencilElement {}
   var HTMLNeoChipElement: {
     prototype: HTMLNeoChipElement;
@@ -814,6 +868,7 @@ declare global {
     'neo-card': HTMLNeoCardElement;
     'neo-card-content': HTMLNeoCardContentElement;
     'neo-card-header': HTMLNeoCardHeaderElement;
+    'neo-checkbox': HTMLNeoCheckboxElement;
     'neo-chip': HTMLNeoChipElement;
     'neo-col': HTMLNeoColElement;
     'neo-copy': HTMLNeoCopyElement;
@@ -956,6 +1011,48 @@ declare namespace LocalJSX {
     */
     'prop'?: string;
   }
+  interface NeoCheckbox {
+    /**
+    * If `true`, the checkbox is selected.
+    */
+    'checked'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the checkbox.
+    */
+    'disabled'?: boolean;
+    /**
+    * If `true`, the checkbox will visually appear as indeterminate.
+    */
+    'indeterminate'?: boolean;
+    /**
+    * The mode determines which platform styles to use.
+    */
+    'mode'?: "ios" | "md";
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name'?: string;
+    /**
+    * Emitted when the toggle loses focus.
+    */
+    'onNeoBlur'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the checked property has changed.
+    */
+    'onNeoChange'?: (event: CustomEvent<CheckboxChangeEventDetail>) => void;
+    /**
+    * Emitted when the toggle has focus.
+    */
+    'onNeoFocus'?: (event: CustomEvent<void>) => void;
+    /**
+    * The value of the toggle does not mean if it's checked or not, use the `checked` property for that.  The value of a toggle is analogous to the value of a `<input type="checkbox">`, it's only used when the toggle participates in a native `<form>`.
+    */
+    'value'?: string;
+  }
   interface NeoChip {
     /**
     * Addes activatable class and adds hover states
@@ -1080,7 +1177,24 @@ declare namespace LocalJSX {
     */
     'upper'?: boolean;
   }
-  interface NeoFormGroup {}
+  interface NeoFormGroup {
+    /**
+    * If `true`, a button tag will be rendered and the item will be tappable.
+    */
+    'button'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the item.
+    */
+    'disabled'?: boolean;
+    /**
+    * The type of the button. Only used when an `onclick` or `button` property is present.
+    */
+    'type'?: 'submit' | 'reset' | 'button';
+  }
   interface NeoGallery {}
   interface NeoGalleryItem {}
   interface NeoGrid {
@@ -1462,6 +1576,7 @@ declare namespace LocalJSX {
     'neo-card': NeoCard;
     'neo-card-content': NeoCardContent;
     'neo-card-header': NeoCardHeader;
+    'neo-checkbox': NeoCheckbox;
     'neo-chip': NeoChip;
     'neo-col': NeoCol;
     'neo-copy': NeoCopy;
@@ -1507,6 +1622,7 @@ declare module "@stencil/core" {
       'neo-card': LocalJSX.NeoCard & JSXBase.HTMLAttributes<HTMLNeoCardElement>;
       'neo-card-content': LocalJSX.NeoCardContent & JSXBase.HTMLAttributes<HTMLNeoCardContentElement>;
       'neo-card-header': LocalJSX.NeoCardHeader & JSXBase.HTMLAttributes<HTMLNeoCardHeaderElement>;
+      'neo-checkbox': LocalJSX.NeoCheckbox & JSXBase.HTMLAttributes<HTMLNeoCheckboxElement>;
       'neo-chip': LocalJSX.NeoChip & JSXBase.HTMLAttributes<HTMLNeoChipElement>;
       'neo-col': LocalJSX.NeoCol & JSXBase.HTMLAttributes<HTMLNeoColElement>;
       'neo-copy': LocalJSX.NeoCopy & JSXBase.HTMLAttributes<HTMLNeoCopyElement>;

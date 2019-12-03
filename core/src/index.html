@@ -121,13 +121,28 @@
   <section>
     <h2>Tag: Form Elements</h2>
     <neo-form-group>
-        <neo-label position="stacked">First Name</neo-label>
-        <neo-input type="text" required="true"></neo-input>
+      <neo-label position="floating"><label>First Name</label></neo-label>
+      <neo-input type="text" required="true"></neo-input>
     </neo-form-group>
 
     <neo-form-group>
-        <neo-label position="stacked">Description</neo-label>
-        <neo-textarea rows="6"></neo-textarea>
+      <neo-label position="stacked">Description</neo-label>
+      <neo-textarea rows="6"></neo-textarea>
+    </neo-form-group>
+
+    <neo-form-group>
+      <neo-label>Mushrooms</neo-label>
+      <neo-checkbox slot="start" value="mushrooms"></neo-checkbox>
+    </neo-form-group>
+
+    <neo-form-group>
+      <neo-label>Pepperoni</neo-label>
+      <neo-checkbox slot="start" checked value="pepperoni" name="food"></neo-checkbox>
+    </neo-form-group>
+
+    <neo-form-group>
+      <neo-checkbox value="sausage" disabled></neo-checkbox>
+      <neo-label>Sausage</neo-label>
     </neo-form-group>
   </section>
 
