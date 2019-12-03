@@ -5,6 +5,16 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property   | Attribute  | Description                                                                                                                                                                                                                                                            | Type                              | Default     |
+| ---------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `button`   | `button`   | If `true`, a button tag will be rendered and the item will be tappable.                                                                                                                                                                                                | `boolean`                         | `false`     |
+| `color`    | `color`    | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `string`                          | `undefined` |
+| `disabled` | `disabled` | If `true`, the user cannot interact with the item.                                                                                                                                                                                                                     | `boolean`                         | `false`     |
+| `type`     | `type`     | The type of the button. Only used when an `onclick` or `button` property is present.                                                                                                                                                                                   | `"button" \| "reset" \| "submit"` | `'button'`  |
+
+
 ## Slots
 
 | Slot      | Description                                                                     |

@@ -38,3 +38,12 @@ export interface CheckboxChangeEventDetail {
   value: any;
   checked: boolean;
 }
+
+export interface RadioGroupChangeEventDetail {
+  value: any;
+}
+
+export interface RadioChangeEventDetail {
+  value: any;
+  checked: boolean;
+}

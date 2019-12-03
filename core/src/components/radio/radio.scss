@@ -1,0 +1,77 @@
+@import "../../theme/neo.globals";
+
+// Radio
+// --------------------------------------------------
+
+:host {
+  /**
+   * @prop --background-checked: Background Color of the checked radio
+   * @prop --color-checked: Color of the checked radio
+   */
+
+  --background: rgba(0,0,0,0.05);
+  --background-checked: #{neo-color(primary, base)};
+  --border-radius: 100px;
+  --color-checked: #{neo-color(primary, contrast)};
+  --radio-margin-top: 2px;
+  --radio-margin-end: 16px;
+  --radio-margin-bottom: 2px;
+  --radio-margin-start: 0;
+  --size: 20px;
+
+  background: var(--background);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size);
+  position: relative;
+  user-select: none;
+  width: var(--size);
+  z-index: 2;
+}
+
+:host(.in-item) {
+  @include margin(var(--radio-margin-top), var(--radio-margin-end), var(--radio-margin-bottom), var(--radio-margin-start));
+  display: block;
+  position: static;
+}
+
+// Radio Checkmark: Checked
+// -----------------------------------------
+
+.radio-inner {
+  height: 40%;
+  width: 40%;
+}
+
+:host(.radio-checked) {
+  background: var(--background-checked);
+}
+  
+:host(.radio-checked) .radio-inner {
+  background: var(--color-checked);
+  border-radius: 100px;
+}
+
+:host(.radio-disabled) {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.radio-icon {
+  align-items: center;
+  contain: layout size style;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  @include input-cover();
+}
+
+.radio-icon,
+.radio-inner {
+  box-sizing: border-box;
+}

@@ -11,6 +11,8 @@ import {
   CheckboxChangeEventDetail,
   Color,
   InputChangeEventDetail,
+  RadioChangeEventDetail,
+  RadioGroupChangeEventDetail,
   StyleEventDetail,
   TextareaChangeEventDetail,
   TextFieldTypes,
@@ -449,6 +451,42 @@ export namespace Components {
     */
     'rounded': boolean;
   }
+  interface NeoRadio {
+    /**
+    * If `true`, the radio is selected.
+    */
+    'checked': boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the radio.
+    */
+    'disabled': boolean;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name': string;
+    /**
+    * the value of the radio.
+    */
+    'value'?: any | null;
+  }
+  interface NeoRadioGroup {
+    /**
+    * If `true`, the radios can be deselected.
+    */
+    'allowEmptySelection': boolean;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name': string;
+    /**
+    * the value of the radio group.
+    */
+    'value'?: any | null;
+  }
   interface NeoRow {}
   interface NeoSlide {}
   interface NeoSlides {
@@ -794,6 +832,18 @@ declare global {
     new (): HTMLNeoProfileElement;
   };
 
+  interface HTMLNeoRadioElement extends Components.NeoRadio, HTMLStencilElement {}
+  var HTMLNeoRadioElement: {
+    prototype: HTMLNeoRadioElement;
+    new (): HTMLNeoRadioElement;
+  };
+
+  interface HTMLNeoRadioGroupElement extends Components.NeoRadioGroup, HTMLStencilElement {}
+  var HTMLNeoRadioGroupElement: {
+    prototype: HTMLNeoRadioGroupElement;
+    new (): HTMLNeoRadioGroupElement;
+  };
+
   interface HTMLNeoRowElement extends Components.NeoRow, HTMLStencilElement {}
   var HTMLNeoRowElement: {
     prototype: HTMLNeoRowElement;
@@ -886,6 +936,8 @@ declare global {
     'neo-masonry': HTMLNeoMasonryElement;
     'neo-masonry-item': HTMLNeoMasonryItemElement;
     'neo-profile': HTMLNeoProfileElement;
+    'neo-radio': HTMLNeoRadioElement;
+    'neo-radio-group': HTMLNeoRadioGroupElement;
     'neo-row': HTMLNeoRowElement;
     'neo-slide': HTMLNeoSlideElement;
     'neo-slides': HTMLNeoSlidesElement;
@@ -1380,6 +1432,58 @@ declare namespace LocalJSX {
     */
     'rounded'?: boolean;
   }
+  interface NeoRadio {
+    /**
+    * If `true`, the radio is selected.
+    */
+    'checked'?: boolean;
+    /**
+    * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+    */
+    'color'?: Color;
+    /**
+    * If `true`, the user cannot interact with the radio.
+    */
+    'disabled'?: boolean;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name'?: string;
+    /**
+    * Emitted when the radio button loses focus.
+    */
+    'onNeoBlur'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the radio button has focus.
+    */
+    'onNeoFocus'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the radio button is selected.
+    */
+    'onNeoSelect'?: (event: CustomEvent<RadioChangeEventDetail>) => void;
+    /**
+    * the value of the radio.
+    */
+    'value'?: any | null;
+  }
+  interface NeoRadioGroup {
+    /**
+    * If `true`, the radios can be deselected.
+    */
+    'allowEmptySelection'?: boolean;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name'?: string;
+    /**
+    * Emitted when the value has changed.
+    */
+    'onNeoChange'?: (event: CustomEvent<RadioGroupChangeEventDetail>) => void;
+    /**
+    * the value of the radio group.
+    */
+    'value'?: any | null;
+  }
   interface NeoRow {}
   interface NeoSlide {}
   interface NeoSlides {
@@ -1594,6 +1698,8 @@ declare namespace LocalJSX {
     'neo-masonry': NeoMasonry;
     'neo-masonry-item': NeoMasonryItem;
     'neo-profile': NeoProfile;
+    'neo-radio': NeoRadio;
+    'neo-radio-group': NeoRadioGroup;
     'neo-row': NeoRow;
     'neo-slide': NeoSlide;
     'neo-slides': NeoSlides;
@@ -1640,6 +1746,8 @@ declare module "@stencil/core" {
       'neo-masonry': LocalJSX.NeoMasonry & JSXBase.HTMLAttributes<HTMLNeoMasonryElement>;
       'neo-masonry-item': LocalJSX.NeoMasonryItem & JSXBase.HTMLAttributes<HTMLNeoMasonryItemElement>;
       'neo-profile': LocalJSX.NeoProfile & JSXBase.HTMLAttributes<HTMLNeoProfileElement>;
+      'neo-radio': LocalJSX.NeoRadio & JSXBase.HTMLAttributes<HTMLNeoRadioElement>;
+      'neo-radio-group': LocalJSX.NeoRadioGroup & JSXBase.HTMLAttributes<HTMLNeoRadioGroupElement>;
       'neo-row': LocalJSX.NeoRow & JSXBase.HTMLAttributes<HTMLNeoRowElement>;
       'neo-slide': LocalJSX.NeoSlide & JSXBase.HTMLAttributes<HTMLNeoSlideElement>;
       'neo-slides': LocalJSX.NeoSlides & JSXBase.HTMLAttributes<HTMLNeoSlidesElement>;
